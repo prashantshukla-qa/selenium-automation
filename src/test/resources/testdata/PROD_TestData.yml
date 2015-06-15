@@ -1,0 +1,12 @@
+ProjectName: HMMv12 - Production
+base_url: https://myhbp.org/hmm12
+
+users:
+  admin:
+    username: qanlplessonuser1
+    password: qatest
+
+email:
+    send: yes
+    recepients:
+     recepient1: prashant.shukla@harvardbusiness.org

@@ -1,0 +1,13 @@
+ProjectName: HMMv12
+base_url: https://qa.myhbp.org/hmm12
+
+users:
+  admin:
+    username: rahularyaarora
+    password: qatest
+
+email:
+    send: yes
+    recepients:
+     recepient1: prashantshukla@qainfotech.com
+     recepient2: prashant.shukla@harvardbusiness.org

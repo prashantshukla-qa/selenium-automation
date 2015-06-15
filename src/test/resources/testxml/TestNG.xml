@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="HMMv12 Parallel Test Demo"  parallel="tests" thread-count="3">
+   
+  <!--   <test name="HMMv12 Parallel test Execution on Firefox" preserve-order="true" 
+              enabled="true">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="com.qait.hbp.demo.tests.Admin_Login_Layout_Pass_Test"></class>	
+        </classes>
+    </test>	
+    <test name="HMMv12 Parallel test Execution on Chrome" preserve-order="true" 
+              enabled="true">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.qait.hbp.demo.tests.Admin_Login_Layout_Fail_Test"></class>	
+        </classes>
+    </test>	 -->	
+     <test name="HMMv12 Parallel test Execution on IE" preserve-order="true" 
+              enabled="true">
+        <parameter name="browser" value="ie" />
+        <classes>
+            <class name="com.qait.hbp.demo.tests.Admin_Login_Layout_Pass_Test"></class>	
+        </classes>
+    </test>		
+</suite>

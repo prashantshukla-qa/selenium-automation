@@ -1,4 +1,15 @@
+target
+test-output
+.project
+.classpath
+.settings
+.idea
+.log
+.DS_Store
 *.class
+
+#selenium drivers
+*.*driver.exe
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
