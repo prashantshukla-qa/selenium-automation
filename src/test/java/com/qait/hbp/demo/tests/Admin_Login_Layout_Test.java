@@ -14,7 +14,7 @@ import com.qait.hbp.automation.TestSessionInitiator;
  *
  * @author prashant.shukla
  */
-public class Admin_Login_Layout_Pass_Test {
+public class Admin_Login_Layout_Test {
 
     TestSessionInitiator test;
     

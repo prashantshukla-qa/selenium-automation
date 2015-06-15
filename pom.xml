@@ -155,6 +155,9 @@
 							<directory>${basedir}</directory>
 							<includes>
 								<include>test-output/</include>
+								<include>.classpath</include>
+								<include>.settings/</include>
+								<include>.project</include>
 							</includes>
 							<excludes>
 							</excludes>

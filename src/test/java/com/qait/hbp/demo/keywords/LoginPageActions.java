@@ -24,7 +24,7 @@ public class LoginPageActions extends GetPage {
 	public void login_to_the_application_as(String user) {
 		String _username = getData("users." + user + ".username");
 		String _password = getData("users." + user + ".password");
-		logMessage("[INFO]: log into application as " + user);
+		logMessage("[INFO]: log into application as '" + user + "'");
 		login_to_the_application_as(_username, _password);
 	}
 
@@ -34,7 +34,7 @@ public class LoginPageActions extends GetPage {
 		element("inp_password").clear();
 		element("inp_password").sendKeys(password);
 		element("btn_signin").click();
-		logMessage("[INFO]: log into the application using credentials '" + username + " / " + password);
+		logMessage("[INFO]: log into the application using credentials '" + username + " / " + password + "'");
 	}
 
 	public void verify_Login_Error_Message_Is_Displayed(String errormsgtxt) {
