@@ -1,0 +1,25 @@
+Page Title: Coach: My Account
+
+#Object Definitions
+====================================================================================
+btn_register           xpath      //*[@id="primary"]/div/div/div[2]/div/div[1]/div/div[1]/div/div[2]/span
+btn_login              xpath      //*[@id="dwfrm_login"]/div[1]/div/div[2]/span
+
+# Registration Page Objects
+inp_FirstName          id          dwfrm_profile_customer_firstname
+inp_LastName           id          dwfrm_profile_customer_lastname
+inp_Email              id          dwfrm_profile_customer_email
+inp_EmailConfirm       id          dwfrm_profile_customer_emailconfirm
+inp_Password           id          dwfrm_profile_login_password
+inp_PasswordConfirm    id          dwfrm_profile_login_passwordconfirm
+btn_SingUp             name        dwfrm_profile_confirm
+
+# Login Page Objects
+inp_LoginEmail         css         input[id^='dwfrm_login_username']
+inp_LoginPassword      css         #dwfrm_login_password
+btn_SignIn             name        dwfrm_login_login
+txt_ErrorMessage       css         #dwfrm_login > div.login-second.visible > div
+txt_emailErrorMsg      xpath       //*[@id="dwfrm_login"]/div[2]/fieldset/div[1]/div/span
+txt_psswordErrorMsg    css         #dwfrm_login > div.login-second.visible > fieldset > div:nth-child(2) > div > span
+
+====================================================================================

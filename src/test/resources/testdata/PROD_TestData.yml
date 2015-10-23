@@ -1,5 +1,5 @@
-ProjectName: HMMv12 - Production
-base_url: https://myhbp.org/hmm12
+ProjectName: Coach Inc - Demo
+base_url: http://www.coach.com/international-landing.html?LOC=Footer-International
 
 users:
   admin:
@@ -9,4 +9,4 @@ users:
 email:
     send: yes
     recepients:
-     recepient1: prashant.shukla@harvardbusiness.org
+     recepient1: prashantshukla@qainfotech.com
