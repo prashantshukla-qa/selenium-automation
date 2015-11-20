@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.qait.automation</groupId>
-	<artifactId>HMMv12-test-automation</artifactId>
+	<artifactId>Htest-automation-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>HMMv12 test automation demo</name>
+	<name>Test automation demo</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

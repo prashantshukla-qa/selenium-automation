@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="0" name="HMMv12 Parallel Test Demo"  parallel="tests" thread-count="3">
-   
-    <test name="HMMv12 Team_Management_Test" preserve-order="true" enabled="true">
+    <test name="Coach Login_Layout_Test" preserve-order="true" enabled="true">
         <classes>
-            <class name="com.qait.hbp.demo.tests.Team_Management_Test"></class>	
+            <class name="com.qait.hbp.demo.tests.Admin_Login_Layout_Test"></class>	
         </classes>
     </test>		
-  
-	<test name="HMMv12 Admin_Login_Layout_Test" preserve-order="true" enabled="true">
-		<classes>
-			<class name="com.qait.hbp.demo.tests.Admin_Login_Layout_Test"></class>	
-		</classes>
-	</test>		
 </suite>

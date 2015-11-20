@@ -112,7 +112,8 @@ public class TestSessionInitiator {
 		Reporter.log("\n[INFO]: The application url is :- " + base_url, true);
 		//driver.manage().deleteAllCookies();
 		driver.get(base_url);
-                driver.findElement(By.xpath("/html/body/div[2]/div[1]/ul[1]/li[10]/a")).click();
+                driver.navigate().to("http://www.coach.com/");
+                //driver.findElement(By.xpath("/html/body/div[2]/div[1]/ul[1]/li[10]/a")).click();
 	}
 
 	public void openUrl(String url) {
