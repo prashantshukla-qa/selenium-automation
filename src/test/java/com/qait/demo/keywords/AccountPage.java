@@ -66,20 +66,6 @@ public class AccountPage extends GetPage {
 		verifyElementText("txt_passwordErrorMsg", errMsg);
 	}
 
-	// private void enterInformationInTextBoxForRegistration(String
-	// labelForInput, String value){
-	// wait.waitForPageToLoadCompletely();
-	//
-	// element("inp_"+labelForInput).sendKeys(value);
-	//
-	// logMessage("User entered '"+value+"' in the '"+labelForInput+"' field");
-	// }
-	//
-	// public void signUpAsANewUser(String firstName, String lastName, String
-	// email, String password){
-	//
-	//
-	// }
 
 	public void enterInformationInTextBoxForRegistration(String labelForInput, String value) {
 		
