@@ -1,10 +1,32 @@
 ProjectName: Coach Inc - Demo
 base_url: http://www.coach.com/international-landing.html?LOC=Footer-International
+countryName: UNITED KINGDOM
 
 users:
   admin:
     username: qanlplessonuser1
     password: qatest
+registration:
+  inputs:
+    field1:
+     label: FirstName
+     value: QA
+    field2:
+     label: LastName
+     value: Automation
+    field3:
+     label: Email
+     value: test
+    field4:
+     label: ConfirmEmail
+     value: test
+    field5:
+     label: Password
+     value: test123456
+    field6:
+     label: ConfirmPassword
+     value: test123456
+  successMessage: "Your account has been created. Would you like checkout to be even easier? Please complete your address below."
 
 email:
     send: yes

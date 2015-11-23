@@ -106,7 +106,7 @@ public class BaseUi {
 			logMessage("[ASSERT PASSED]: PageTitle for " + pageName
 					+ " contains: '" + expectedPagetitle + "'.");
 		} catch (TimeoutException exp) {
-			logMessage("[ASSERT FAILED]: As actual Page Title for '" + pageName
+			Assert.fail("[ASSERT FAILED]: As actual Page Title for '" + pageName
 					+ "' does not contain expected Page Title : '"
 					+ expectedPagetitle + "'.");
 		}

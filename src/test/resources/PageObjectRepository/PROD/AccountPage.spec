@@ -2,7 +2,7 @@ Page Title: Coach: My Account
 
 #Object Definitions
 ====================================================================================
-btn_register           xpath      //*[@id="primary"]/div/div/div[2]/div/div[1]/div/div[1]/div/div[2]/span
+btn_register           css      .sign-in-button>span
 btn_login              xpath      //*[@id="dwfrm_login"]/div[1]/div/div[2]/span
 
 # Registration Page Objects
@@ -21,5 +21,12 @@ btn_SignIn             name        dwfrm_login_login
 txt_ErrorMessage       css         #dwfrm_login > div.login-second.visible > div
 txt_emailErrorMsg      xpath       //*[@id="dwfrm_login"]/div[2]/fieldset/div[1]/div/span
 txt_psswordErrorMsg    css         #dwfrm_login > div.login-second.visible > fieldset > div:nth-child(2) > div > span
+
+modal_registration     xpath       //div[contains(@class,'registration')]//div[contains(@style,'display: block')]
+txt_accountCreated     xpath       //div[contains(@class,'registration-step-two')]/p[contains(text(),'${text}')]
+
+inp_address1           id          dwfrm_profile_address_address1
+btn_skip               css         .skip-button
+
 
 ====================================================================================
