@@ -20,7 +20,7 @@ inp_LoginPassword      css         #dwfrm_login_password
 btn_SignIn             name        dwfrm_login_login
 txt_ErrorMessage       css         #dwfrm_login > div.login-second.visible > div
 txt_emailErrorMsg      xpath       //*[@id="dwfrm_login"]/div[2]/fieldset/div[1]/div/span
-txt_psswordErrorMsg    css         #dwfrm_login > div.login-second.visible > fieldset > div:nth-child(2) > div > span
+txt_passwordErrorMsg    css         #dwfrm_login > div.login-second.visible > fieldset > div:nth-child(2) > div > span
 
 modal_registration     xpath       //div[contains(@class,'registration')]//div[contains(@style,'display: block')]
 txt_accountCreated     xpath       //div[contains(@class,'registration-step-two')]/p[contains(text(),'${text}')]
