@@ -1,7 +1,7 @@
 selenium-automation
 ===================
 
-### HBP UAT - Automated Functional Test Demo
+### Automated Functional Test Demo
 ---
 #### Summary:
 
