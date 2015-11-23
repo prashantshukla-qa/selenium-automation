@@ -51,7 +51,7 @@ public class AccountPage extends GetPage {
 	}
 
 	public void verify_Login_Error_Message_Is_Displayed(String errMsg) {
-		verifyElementText(element("txt_ErrorMessage").getText(), errMsg);
+		verifyElementText("txt_ErrorMessage", errMsg);
 	}
 
 	public void verify_User_Is_On_Login_Page() {
@@ -59,27 +59,13 @@ public class AccountPage extends GetPage {
 	}
 
 	public void verify_Email_Error_Message_Is_Displayed(String errMsg) {
-		verifyElementText(element("txt_emailErrorMsg").getText(), errMsg);
+		verifyElementText("txt_emailErrorMsg", errMsg);
 	}
 
 	public void verify_Password_Error_Message_Is_Displayed(String errMsg) {
-		verifyElementText(element("txt_passwordErrorMsg").getText(), errMsg);
+		verifyElementText("txt_passwordErrorMsg", errMsg);
 	}
 
-	// private void enterInformationInTextBoxForRegistration(String
-	// labelForInput, String value){
-	// wait.waitForPageToLoadCompletely();
-	//
-	// element("inp_"+labelForInput).sendKeys(value);
-	//
-	// logMessage("User entered '"+value+"' in the '"+labelForInput+"' field");
-	// }
-	//
-	// public void signUpAsANewUser(String firstName, String lastName, String
-	// email, String password){
-	//
-	//
-	// }
 
 	public void enterInformationInTextBoxForRegistration(String labelForInput, String value) {
 		

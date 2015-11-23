@@ -2,10 +2,6 @@ ProjectName: Coach Inc - Demo
 base_url: http://www.coach.com/international-landing.html?LOC=Footer-International
 countryName: UNITED KINGDOM
 
-users:
-  admin:
-    username: qanlplessonuser1
-    password: qatest
 registration:
   inputs:
     field1:

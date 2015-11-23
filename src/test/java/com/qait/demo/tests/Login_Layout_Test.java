@@ -9,6 +9,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.qait.automation.TestSessionInitiator;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 
 /**
  *
@@ -31,6 +33,7 @@ public class Login_Layout_Test {
     public void Test01_Launch_Application() {
         test.launchApplication(getData("base_url"));
         test.homepage.verify_user_is_on_home_page();
+        test.homepage.navigateToSpecificCountrySite(getData("countryName"));
     }
 
     @Test
@@ -61,7 +64,12 @@ public class Login_Layout_Test {
         test.homepage.verify_user_is_on_home_page();
     }
 
-    @AfterClass
+    @AfterMethod
+    public void take_screenshot_on_failure(ITestResult result) {
+        test.takescreenshot.takeScreenShotOnException(result);
+    }
+
+    //@AfterClass
     public void stop_test_session() {
         test.closeTestSession();
     }
