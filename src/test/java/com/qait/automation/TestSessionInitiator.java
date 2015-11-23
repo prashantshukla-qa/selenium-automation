@@ -18,6 +18,8 @@ import com.qait.automation.utils.TakeScreenshot;
 import com.qait.demo.keywords.HomePageActions;
 import com.qait.demo.keywords.AccountPage;
 import com.qait.demo.keywords.LoginPageActions;
+import com.qait.demo.keywords.MyAccountPage;
+
 import org.openqa.selenium.By;
 
 public class TestSessionInitiator {
@@ -40,6 +42,7 @@ public class TestSessionInitiator {
 	 */
 	public HomePageActions homepage;
 	public AccountPage accountpage;
+	public MyAccountPage myAccountpage;
 
 	public TakeScreenshot takescreenshot;
 	public TopicNamePojo topicNameValue;
@@ -54,6 +57,7 @@ public class TestSessionInitiator {
 	private void _initPage() {
 		homepage = new HomePageActions(driver);
 		accountpage = new AccountPage(driver);
+		myAccountpage = new MyAccountPage(driver);
 		topicNameValue = new TopicNamePojo();
 	}
 

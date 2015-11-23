@@ -64,7 +64,7 @@ public class Login_Layout_Test {
     @Test
     public void Test05_Login_To_Application_Using_Correct_Credentials() {
         test.accountpage.login_to_the_application_as("q234@qainfotech.com", "12345678e");
-        test.homepage.verify_user_is_on_home_page();
+        test.myAccountpage.verify_User_Is_On_My_Account_Page();
     }
     
 
@@ -74,7 +74,7 @@ public class Login_Layout_Test {
     }
 
 
-    //@AfterClass
+    @AfterClass
     public void stop_test_session() {
         test.closeTestSession();
     }
