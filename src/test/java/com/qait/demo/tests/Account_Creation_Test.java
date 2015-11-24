@@ -2,8 +2,9 @@ package com.qait.demo.tests;
 
 import static com.qait.automation.utils.YamlReader.getData;
 
-import org.cyberneko.html.HTMLScanner.CurrentEntity;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -25,7 +26,7 @@ public class Account_Creation_Test {
     @BeforeClass
     @Parameters("browser")
     public void start_test_session(@Optional String browser) {
-        test = new TestSessionInitiator("Admin_Login_Tests", browser);
+        test = new TestSessionInitiator("Account_Creation_Test", browser);
     }
 
     @Test
@@ -67,6 +68,12 @@ public class Account_Creation_Test {
         test.accountpage.verifyRegisrationButton();
     }
     
+
+    @AfterMethod
+    public void take_screenshot_on_failure(ITestResult result) {
+      test.takescreenshot.takeScreenShotOnException(result);
+    }
+
 
     @AfterClass
     public void stop_test_session() {

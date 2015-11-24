@@ -8,8 +8,10 @@ import com.qait.automation.getpageobjects.GetPage;
 
 public class AccountPage extends GetPage {
 
+	long currentTimeStamp = 0;
 	public AccountPage(WebDriver driver) {
 		super(driver, "AccountPage");
+		currentTimeStamp = System.currentTimeMillis();
 	}
 
 	public void verify_left_nav_bar_is_open() {
@@ -80,29 +82,36 @@ public class AccountPage extends GetPage {
 	// }
 
 	public void enterInformationInTextBoxForRegistration(String labelForInput, String value) {
-		long currentTimeStamp = System.currentTimeMillis();
+		
 		wait.waitForPageToLoadCompletely();
 
 		WebElement formElement = null;
 
 		switch (labelForInput) {
-
+		
 		case "FirstName":
 			formElement = element("inp_FirstName");
+			break;
 		case "LastName":
 			formElement = element("inp_LastName");
+			break;
 		case "Email":
 			formElement = element("inp_Email");
 			value = value + "_" + currentTimeStamp + "@qainfotech.com";
+			break;
 		case "ConfirmEmail":
 			formElement = element("inp_EmailConfirm");
 			value = value + "_" + currentTimeStamp + "@qainfotech.com";
+			break;
 		case "Password":
-			formElement = element("inp_Password");
+			formElement = element("inp_Password");	
+			break;
 		case "ConfirmPassword":
 			formElement = element("inp_PasswordConfirm");
+			break;
 		default:
 			Assert.fail("Incorrect Label provided for registration");
+			break;
 		}
 
 		formElement.clear();
