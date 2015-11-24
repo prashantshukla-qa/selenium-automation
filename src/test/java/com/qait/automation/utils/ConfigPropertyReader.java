@@ -29,7 +29,7 @@ public class ConfigPropertyReader {
     public static String getProperty(String propFile, String Property) {
         try {
             Properties prop = ResourceLoader.loadProperties(propFile);
-            return prop.getProperty(Property);
+            return System.getProperty(Property, prop.getProperty(Property));
         } catch (Exception ex) {
             ex.printStackTrace();
             return null;

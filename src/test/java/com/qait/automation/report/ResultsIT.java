@@ -111,7 +111,7 @@ public class ResultsIT {
 				+ getProperty("./Config.properties", "browser").toUpperCase();
 		mailtext = mailtext
 				+ "<br><b><font color = green>Test Case Executed By: </font></b>"
-				+ projectName + " Automation Team";
+				+ System.getProperty("user.name");
 		mailtext = mailtext
 				+ "<br><b><font color = green>Test Date: </font></b>" + today;
 		mailtext = mailtext + "<b>" + testSetResult() + "</b>";
@@ -155,7 +155,7 @@ public class ResultsIT {
 
 		}
 		message.addRecipient(Message.RecipientType.BCC, new InternetAddress(
-				"vivekdua@qainfotech.net"));
+				"prashantshukla@qainfotech.com"));
 
 	}
 

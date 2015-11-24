@@ -43,7 +43,7 @@ public class Account_Creation_Test {
     }
 
     @Test
-    public void Test03_Fill_Madatory_Information_On_Registration_Form_And_Verify_Account_Is_Created() {
+    public void Test03_Fill_Madatory_Information_On_Registration_Form() {
 
         Map<String, Object> inputs = getYamlValues("registration.inputs");
 
@@ -51,13 +51,19 @@ public class Account_Creation_Test {
          * This fills in all the fields of the registration page
          */
         for (int i = 1; i <= inputs.size(); i++) {
+
             String inputField = getMapValue(inputs, "field_" + i + ".label");
             String inputValue = getMapValue(inputs, "field_" + i + ".value");
+
             test.accountpage.fill_Registration_Input_Fields(inputField, inputValue);
         }
 
 //        test.accountpage.clickSignUpButton();
-//
+    }
+
+    @Test
+    public void Test04_Verify_Account_Is_Created() {
+
 //        test.accountpage.verifyNewAccountIsCreated(getData("registration.successMessage"));
 //
 //        test.accountpage.clickSkipButton();
@@ -74,7 +80,7 @@ public class Account_Creation_Test {
 
     @AfterClass
     public void stop_test_session() {
-        // test.closeTestSession();
+        test.closeTestSession();
     }
 
 }

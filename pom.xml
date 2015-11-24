@@ -10,8 +10,8 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <testxml>TestNG.xml</testxml>
-        <seleniumver>2.46.0</seleniumver>
+        <testng.xml>TestNG.xml</testng.xml>
+        <seleniumver>2.48.2</seleniumver>
     </properties>
 
     <dependencies>
@@ -114,15 +114,13 @@
                         <goals>
                             <goal>test</goal>
                         </goals>
-
                     </execution>
-
                 </executions>
                 <configuration>
                     <skip>false</skip>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <suiteXmlFile>./src/test/resources/testxml/${testxml}</suiteXmlFile>
+                        <suiteXmlFile>./src/test/resources/testxml/${testng.xml}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

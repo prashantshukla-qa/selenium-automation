@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Coach Parallel Test Demo"  parallel="tests" thread-count="3">
+    <tests>
+        <test name="Coach Login_Layout_Test - Firefox" preserve-order="true" enabled="true">
+            <classes>
+                <class name="com.qait.demo.tests.Login_Layout_Test"></class>
+                <class name="com.qait.demo.tests.Account_Creation_Test"></class>	
+            </classes>
+        </test>	
+    </tests>
+</suite>
