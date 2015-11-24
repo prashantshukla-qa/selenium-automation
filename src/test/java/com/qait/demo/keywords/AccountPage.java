@@ -81,7 +81,7 @@ public class AccountPage extends GetPage {
 
     public void clickSignUpButton() {
         element("btn_SingUp").click();
-        logMessage("User clicked on the Sign up button after accepting the terms while registring");
+        logMessage("[INFO]: User clicked on the Sign up button after accepting the terms while registring");
     }
 
     public void verifyNewAccountIsCreated(String message) {

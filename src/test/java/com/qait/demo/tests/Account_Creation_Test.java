@@ -4,7 +4,6 @@ import static com.qait.automation.utils.YamlReader.getData;
 import static com.qait.automation.utils.YamlReader.getYamlValues;
 import static com.qait.automation.utils.YamlReader.getMapValue;
 
-
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -51,20 +50,20 @@ public class Account_Creation_Test {
         /**
          * This fills in all the fields of the registration page
          */
-        for (int i = 1; i <= inputs.size(); i++){
+        for (int i = 1; i <= inputs.size(); i++) {
             String inputField = getMapValue(inputs, "field_" + i + ".label");
             String inputValue = getMapValue(inputs, "field_" + i + ".value");
             test.accountpage.fill_Registration_Input_Fields(inputField, inputValue);
         }
- 
+
 //        test.accountpage.clickSignUpButton();
-//        
+//
 //        test.accountpage.verifyNewAccountIsCreated(getData("registration.successMessage"));
-//        
-//       test.accountpage.clickSkipButton();
-//        
+//
+//        test.accountpage.clickSkipButton();
+//
 //        test.homepage.logOut();
-//        
+//
 //        test.accountpage.verifyRegisrationButton();
     }
 
