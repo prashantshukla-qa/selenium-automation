@@ -23,12 +23,12 @@ public class Login_Layout_Test {
     TestSessionInitiator test;
 
     String[] browserSizes = {"720x360"};
-    String[] layoutTags = {"all"};
+    String[] layoutTags = {"mobile"};
 
     @BeforeClass
     @Parameters("browser")
     public void start_test_session(@Optional String browser) {
-        test = new TestSessionInitiator("Admin_Login_Tests", browser);
+        test = new TestSessionInitiator("Login_Layout_Tests", browser);
     }
 
     @Test

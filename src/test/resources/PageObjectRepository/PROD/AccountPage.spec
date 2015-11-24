@@ -23,10 +23,15 @@ txt_emailErrorMsg      xpath       //*[@id="dwfrm_login"]/div[2]/fieldset/div[1]
 txt_passwordErrorMsg    css         #dwfrm_login > div.login-second.visible > fieldset > div:nth-child(2) > div > span
 
 modal_registration     xpath       //div[contains(@class,'registration')]//div[contains(@style,'display: block')]
-txt_accountCreated     xpath       //div[contains(@class,'registration-step-two')]/p[contains(text(),'${text}')]
+txt_accountCreated     xpath       //div[contains(@class,'registration-step-two')]/p[contains(text(),'#{text}')]
 
 inp_address1           id          dwfrm_profile_address_address1
 btn_skip               css         .skip-button
 
 
 ====================================================================================
+
+@mobile
+--------------------------------
+btn_register
+    above: btn_login > 10 px

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="HMMv12 Parallel Test Demo"  parallel="tests" thread-count="3">
-    <test name="Coach Login_Layout_Test" preserve-order="true" enabled="true">
-        <classes>
-            <class name="com.qait.hbp.demo.tests.Admin_Login_Layout_Test"></class>	
-        </classes>
-    </test>		
+<suite verbose="0" name="Coach Parallel Test Demo"  parallel="tests" thread-count="3">
+    <tests>
+        <test name="Coach Login_Layout_Test - Firefox" preserve-order="true" enabled="true">
+            <parameter name="browser" value="firefox" />
+            <classes>
+                <class name="com.qait.demo.tests.Login_Layout_Test"></class>	
+            </classes>
+        </test>
+        <test name="Coach Login_Layout_Test - Chrome" preserve-order="true" enabled="true">
+            <parameter name="browser" value="chrome" />
+            <classes>
+                <class name="com.qait.demo.tests.Login_Layout_Test"></class>	
+            </classes>
+        </test>
+    </tests>		
 </suite>
