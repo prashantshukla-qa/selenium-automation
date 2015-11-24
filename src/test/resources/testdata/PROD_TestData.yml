@@ -1,25 +1,28 @@
 ProjectName: Coach Inc - Demo
 base_url: http://www.coach.com/international-landing.html?LOC=Footer-International
-countryName: UNITED KINGDOM
+
+country:
+    area: EUROPE
+    name: UNITED KINGDOM
 
 registration:
   inputs:
-    field1:
+    field_1:
      label: FirstName
      value: QA
-    field2:
+    field_2:
      label: LastName
      value: Automation
-    field3:
+    field_3:
      label: Email
-     value: test
-    field4:
+     value: test@qainfotech.com
+    field_4:
      label: ConfirmEmail
-     value: test
-    field5:
+     value: test@qainfotech.com
+    field_5:
      label: Password
      value: test123456
-    field6:
+    field_6:
      label: ConfirmPassword
      value: test123456
   successMessage: "Your account has been created. Would you like checkout to be even easier? Please complete your address below."

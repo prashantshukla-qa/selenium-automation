@@ -1,6 +1,9 @@
 package com.qait.demo.tests;
 
 import static com.qait.automation.utils.YamlReader.getData;
+import static com.qait.automation.utils.YamlReader.getYamlValues;
+import static com.qait.automation.utils.YamlReader.getMapValue;
+
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -11,6 +14,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.qait.automation.TestSessionInitiator;
+import java.util.Map;
 
 /**
  *
@@ -19,9 +23,6 @@ import com.qait.automation.TestSessionInitiator;
 public class Account_Creation_Test {
 
     TestSessionInitiator test;
-
-    String[] browserSizes = {"720x360"};
-    String[] layoutTags = {"all"};
 
     @BeforeClass
     @Parameters("browser")
@@ -33,51 +34,48 @@ public class Account_Creation_Test {
     public void Test01_Launch_Application() {
         test.launchApplication(getData("base_url"));
         test.homepage.verify_user_is_on_home_page();
-        test.homepage.navigateToSpecificCountrySite(getData("countryName"));
+        test.homepage.navigateToSpecificCountrySite(getData("country.area"), getData("country.name"));
     }
 
     @Test
     public void Test02_Navigate_To_Registration_Page() {
         test.homepage.navigate_to_account_page();
-        test.accountpage.open_registration_form();       
+        test.accountpage.open_registration_form();
     }
-    
+
     @Test
-    public void Test03_Fill_Madatory_Information_On_Registration_Form_And_Verify_Account_Is_Created(){
-    
-    	test.accountpage.enterInformationInTextBoxForRegistration(getData("registration.inputs.field1.label"), 
-        		getData("registration.inputs.field1.value"));
-        test.accountpage.enterInformationInTextBoxForRegistration(getData("registration.inputs.field2.label"), 
-        		getData("registration.inputs.field2.value"));
-        test.accountpage.enterInformationInTextBoxForRegistration(getData("registration.inputs.field3.label"), 
-        		getData("registration.inputs.field3.value"));
-        test.accountpage.enterInformationInTextBoxForRegistration(getData("registration.inputs.field4.label"), 
-        		getData("registration.inputs.field4.value"));
-        test.accountpage.enterInformationInTextBoxForRegistration(getData("registration.inputs.field5.label"), 
-        		getData("registration.inputs.field5.value"));
-        test.accountpage.enterInformationInTextBoxForRegistration(getData("registration.inputs.field6.label"), 
-        		getData("registration.inputs.field6.value"));
-        test.accountpage.clickSignUpButton();
-        
-        test.accountpage.verifyNewAccountIsCreated(getData("registration.successMessage"));
-        
-        test.accountpage.clickSkipButton();
-        
-        test.homepage.logOut();
-        
-        test.accountpage.verifyRegisrationButton();
+    public void Test03_Fill_Madatory_Information_On_Registration_Form_And_Verify_Account_Is_Created() {
+
+        Map<String, Object> inputs = getYamlValues("registration.inputs");
+
+        /**
+         * This fills in all the fields of the registration page
+         */
+        for (int i = 1; i <= inputs.size(); i++){
+            String inputField = getMapValue(inputs, "field_" + i + ".label");
+            String inputValue = getMapValue(inputs, "field_" + i + ".value");
+            test.accountpage.fill_Registration_Input_Fields(inputField, inputValue);
+        }
+ 
+//        test.accountpage.clickSignUpButton();
+//        
+//        test.accountpage.verifyNewAccountIsCreated(getData("registration.successMessage"));
+//        
+//       test.accountpage.clickSkipButton();
+//        
+//        test.homepage.logOut();
+//        
+//        test.accountpage.verifyRegisrationButton();
     }
-    
 
     @AfterMethod
     public void take_screenshot_on_failure(ITestResult result) {
-      test.takescreenshot.takeScreenShotOnException(result);
+        test.takescreenshot.takeScreenShotOnException(result);
     }
-
 
     @AfterClass
     public void stop_test_session() {
-        test.closeTestSession();
+        // test.closeTestSession();
     }
 
 }

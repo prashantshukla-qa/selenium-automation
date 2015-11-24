@@ -98,8 +98,8 @@ public class GetPage extends BaseUi {
 			String elementTextReplace) {
 		wait.waitForElementToBeVisible(element(elementName, elementTextReplace));
 		boolean result = element(elementName, elementTextReplace).isDisplayed();
-		assertTrue(result, logMessage("[ASSERT FAILED]: element '" + elementName
-				+ "with text " + elementTextReplace + "' is not displayed."));
+		assertTrue(result, "[ASSERT FAILED]: element '" + elementName
+				+ "with text " + elementTextReplace + "' is not displayed.");
 		logMessage("[ASSERT PASSED]: element " + elementName + " with text "
 				+ elementTextReplace + " is displayed.");
 		return result;
@@ -107,9 +107,10 @@ public class GetPage extends BaseUi {
 
 	protected void verifyElementText(String elementName, String expectedText) {
 		wait.waitForElementToBeVisible(element(elementName));
+                logMessage("[INFO]: element Text :- '" + element(elementName).getText().trim() + "'\nExpected Text :-" + expectedText);
 		assertEquals(element(elementName).getText().trim(), expectedText,
-				logMessage("[ASSERT FAILED]: Text of the page element '"
-						+ elementName + "' is not as expected: "));
+				"[ASSERT FAILED]: Text of the page element '"
+						+ elementName + "' is not as expected: ");
 		logMessage("[ASSERT PASSED]: element " + elementName
 				+ " is visible and Text is " + expectedText);
 	}
@@ -117,7 +118,7 @@ public class GetPage extends BaseUi {
 	protected void verifyElementTextContains(String elementName,
 			String expectedText) {
 		wait.waitForElementToBeVisible(element(elementName));
-		assertThat(logMessage("[ASSERT FAILED]: Text of the page element '"
+		assertThat(("[ASSERT FAILED]: Text of the page element '"
 				+ elementName + "' is not as expected: "), element(elementName)
 				.getText().trim(), containsString(expectedText));
 		logMessage("[ASSERT PASSED]: element " + elementName

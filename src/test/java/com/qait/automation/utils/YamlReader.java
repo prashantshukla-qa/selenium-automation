@@ -19,6 +19,12 @@ public class YamlReader {
 
     public static String yamlFilePath = "src/test/resources/testdata/QA_TestData.yml";
    
+    public static String setYamlFilePath(String yamlPath){
+        yamlFilePath = yamlPath;
+        return yamlFilePath;
+    }
+        
+    
     public static String setYamlFilePath() {
         String tier = getProperty("Config.properties", "tier").trim();
         if (tier.equalsIgnoreCase("dev")) {

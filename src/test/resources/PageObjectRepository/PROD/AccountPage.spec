@@ -9,9 +9,9 @@ btn_login              xpath      //*[@id="dwfrm_login"]/div[1]/div/div[2]/span
 inp_FirstName          id          dwfrm_profile_customer_firstname
 inp_LastName           id          dwfrm_profile_customer_lastname
 inp_Email              id          dwfrm_profile_customer_email
-inp_EmailConfirm       id          dwfrm_profile_customer_emailconfirm
+inp_ConfirmEmail       id          dwfrm_profile_customer_emailconfirm
 inp_Password           id          dwfrm_profile_login_password
-inp_PasswordConfirm    id          dwfrm_profile_login_passwordconfirm
+inp_ConfirmPassword    id          dwfrm_profile_login_passwordconfirm
 btn_SingUp             name        dwfrm_profile_confirm
 
 # Login Page Objects

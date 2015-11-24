@@ -1,13 +1,18 @@
-Page Title: HMM12
+Page Title: COACH: Global
 
 #Object Definitions
 ====================================================================================
 
-inp_username    css     #username
-
+lnk_area              linktext     #{countryarea}
+lnk_country           linktext     #{countryname}
+btn_Account           css          #drop1
+txt_userName          xpath        (//span[@id='user-name'])[1]
+lnk_accountDropdown   css          #account-dropdown>a
+lnk_signOut           css          a[title='Sign Out']
 ====================================================================================
 
 @all
 --------------------------------
-txt_errormsg
-    above: inp_username > 10 px
+btn_lefnav
+    right of: lnk_breadcrumb
+    aligned vertically: lnk_breadcrumb
