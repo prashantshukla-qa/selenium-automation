@@ -48,7 +48,7 @@ public class Login_Layout_Test {
     @Test
     public void Test03_Login_To_Application_Using_Blank_UserName() {
         test.accountpage.login_to_the_application_as("", "wrongpassword1");
-        test.accountpage.verify_Email_Error_Message_Is_Displayed("ENTER YOUR EMAIL ADDRESS");
+        test.accountpage.verify_Email_Error_Message_Is_Displayed("WRONG MESSAGE: ENTER YOUR EMAIL ADDRESS");
     }
 
     @Test

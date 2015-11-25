@@ -43,7 +43,7 @@ public class Account_Creation_Test {
     }
 
     @Test
-    public void Test03_Fill_Madatory_Information_On_Registration_Form() {
+    public void Test03_Fill_Mandatory_Information_On_Registration_Form() {
 
         Map<String, Object> inputs = getYamlValues("registration.inputs");
 

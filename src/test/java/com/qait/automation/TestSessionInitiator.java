@@ -17,11 +17,8 @@ import com.qait.automation.pojo.TopicNamePojo;
 import com.qait.automation.utils.TakeScreenshot;
 import com.qait.demo.keywords.HomePageActions;
 import com.qait.demo.keywords.AccountPage;
-import com.qait.demo.keywords.LoginPageActions;
 import com.qait.demo.keywords.MyAccountPage;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 
 public class TestSessionInitiator {
 
