@@ -18,7 +18,7 @@ public class MyAccountPage extends GetPage {
         logMessage("[INFO]: User has succesfully logged in");
     }
 
-    public void verify_User_Is_On_My_Account_Page(String userId) {
+    public void verify_user_is_on_my_account_page(String userId) {
         verifyPageTitleContains();
         isElementDisplayed("txt_Welcome");
         logMessage("[INFO]: User " + userId +"has succesfully logged in");

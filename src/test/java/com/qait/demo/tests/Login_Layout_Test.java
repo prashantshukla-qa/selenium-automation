@@ -33,7 +33,7 @@ public class Login_Layout_Test {
     public void Test01_Launch_Application() {
         test.launchApplication(getData("base_url"));
         test.homepage.verify_user_is_on_home_page();
-        test.homepage.navigateToSpecificCountrySite(getData("country.area"), getData("country.name"));
+        test.homepage.navigate_to_country_specific_site(getData("country.area"), getData("country.name"));
     }
 
     @Test
@@ -41,27 +41,27 @@ public class Login_Layout_Test {
         test.homepage.navigate_to_account_page();
         test.accountpage.open_login_form();
         test.accountpage.login_to_the_application_as("Wrong@UserName.com", "Password1");
-        test.accountpage.verify_Login_Error_Message_Is_Displayed("No matching record was found. Check your spelling and try again.");
+        test.accountpage.verify_login_error_message_is_displayed("No matching record was found. Check your spelling and try again.");
         test.accountpage.testPageLayout(browserSizes, layoutTags);
     }
 
     @Test
     public void Test03_Login_To_Application_Using_Blank_UserName() {
         test.accountpage.login_to_the_application_as("", "wrongpassword1");
-        test.accountpage.verify_Email_Error_Message_Is_Displayed("WRONG MESSAGE: ENTER YOUR EMAIL ADDRESS");
+        test.accountpage.verify_email_error_message_is_displayed("WRONG MESSAGE: ENTER YOUR EMAIL ADDRESS");
     }
 
     @Test
     public void Test04_Login_To_Application_Using_Blank_Password() {
         test.accountpage.login_to_the_application_as("wrongusername", "");
-        test.accountpage.verify_User_Is_On_Login_Page();
-        test.accountpage.verify_Password_Error_Message_Is_Displayed("ENTER YOUR PASSWORD");
+        test.accountpage.verify_user_is_on_login_page();
+        test.accountpage.verify_password_error_message_is_displayed("ENTER YOUR PASSWORD");
     }
 
     @Test
     public void Test05_Login_To_Application_Using_Correct_Credentials() {
         test.accountpage.login_to_the_application_as("q234@qainfotech.com", "12345678e");
-        test.myAccountpage.verify_User_Is_On_My_Account_Page("q234@qainfotech.com");
+        test.myAccountpage.verify_user_is_on_my_account_page("q234@qainfotech.com");
     }
     
 

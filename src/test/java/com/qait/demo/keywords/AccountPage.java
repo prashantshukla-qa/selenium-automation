@@ -49,19 +49,19 @@ public class AccountPage extends GetPage {
         element("btn_SignIn").click();
     }
 
-    public void verify_Login_Error_Message_Is_Displayed(String errMsg) {
+    public void verify_login_error_message_is_displayed(String errMsg) {
         verifyElementText("txt_ErrorMessage", errMsg);
     }
 
-    public void verify_User_Is_On_Login_Page() {
+    public void verify_user_is_on_login_page() {
         verifyPageTitleExact();
     }
 
-    public void verify_Email_Error_Message_Is_Displayed(String errMsg) {
+    public void verify_email_error_message_is_displayed(String errMsg) {
         verifyElementText("txt_emailErrorMsg", errMsg);
     }
 
-    public void verify_Password_Error_Message_Is_Displayed(String errMsg) {
+    public void verify_password_error_message_is_displayed(String errMsg) {
         verifyElementText("txt_passwordErrorMsg", errMsg);
     }
 

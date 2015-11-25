@@ -19,7 +19,7 @@ public class HomePageActions extends GetPage {
         this.driver = driver;
     }
 
-    public void navigateToSpecificCountrySite(String areaName, String countryName) {
+    public void navigate_to_country_specific_site(String areaName, String countryName) {
         wait.waitForPageToLoadCompletely();
 
         if (getProperty("./Config.properties", "browser").equalsIgnoreCase("mobile") || this.driver.manage().window().getSize().getWidth() < 678) {
