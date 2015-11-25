@@ -77,8 +77,8 @@ public class GetPage extends BaseUi {
 			elem = wait.waitForElementToBeVisible(webdriver
 					.findElement(getLocator(elementToken, replacement)));
 		} catch (NoSuchElementException excp) {
-			fail(logMessage("[ASSERT FAILED]: Element " + elementToken
-					+ " not found on the " + this.pageName + " !!!"));
+			fail("[ASSERT FAILED]: Element " + elementToken
+					+ " not found on the " + this.pageName + " !!!");
 		} catch (NullPointerException npe) {
 
 		}
