@@ -65,7 +65,7 @@ public class AccountPage extends GetPage {
         verifyElementText("txt_passwordErrorMsg", errMsg);
     }
 
-    public void fill_Registration_Input_Fields(String labelForInput, String value) {
+    public void fill_registration_rnput_rields(String labelForInput, String value) {
         element("inp_" + labelForInput).clear();
         if (labelForInput.equals("Email") || labelForInput.equals("ConfirmEmail")) {// Randomize user email 
             value = value.replace("@", "_" + currentTimeStamp + "@");

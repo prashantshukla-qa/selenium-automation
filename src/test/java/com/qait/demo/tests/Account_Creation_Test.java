@@ -55,7 +55,7 @@ public class Account_Creation_Test {
 			String inputField = getMapValue(inputs, "field_" + i + ".label");
 			String inputValue = getMapValue(inputs, "field_" + i + ".value");
 
-			test.accountpage.fill_Registration_Input_Fields(inputField, inputValue);
+			test.accountpage.fill_registration_rnput_rields(inputField, inputValue);
 		}
 
 		// test.accountpage.clickSignUpButton();
