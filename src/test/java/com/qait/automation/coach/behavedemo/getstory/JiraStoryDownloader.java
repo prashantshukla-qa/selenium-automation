@@ -26,9 +26,9 @@ import org.jbehave.core.model.TableTransformers.Replacing;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.jayway.jsonpath.JsonPath;
-import com.qait.automation.SAM.assessment.behavedemo.utils.ConfigPropertyReader;
-import com.qait.automation.SAM.assessment.behavedemo.utils.HttpClient;
-import com.qait.automation.SAM.assessment.behavedemo.utils.report.email.Emailer;
+import com.qait.automation.coach.behavedemo.utils.report.email.Emailer;
+import com.qait.automation.utils.ConfigPropertyReader;
+import com.qait.automation.utils.HttpClient;
 
 import gherkin.lexer.Fi;
 import net.minidev.json.JSONArray;

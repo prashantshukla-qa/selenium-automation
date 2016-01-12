@@ -1,10 +1,10 @@
 package com.qait.automation.coach.behavedemo.getstory;
 
-import static com.qait.automation.SAM.assessment.behavedemo.utils.YamlReader.getData;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Iterator;
+
+import org.testng.internal.Yaml;
 
 import com.atlassian.jira.rest.client.IssueRestClient;
 import com.atlassian.jira.rest.client.NullProgressMonitor;
@@ -13,6 +13,7 @@ import com.atlassian.jira.rest.client.domain.Issue;
 import com.atlassian.jira.rest.client.domain.Transition;
 import com.atlassian.jira.rest.client.domain.input.TransitionInput;
 import com.atlassian.jira.rest.client.internal.jersey.JerseyJiraRestClientFactory;
+import com.qait.automation.utils.YamlReader;
 public class JIRAScenarioResultPublisher {
 
 	public  static  String completeScenario="";
@@ -49,7 +50,7 @@ public class JIRAScenarioResultPublisher {
 					.createWithBasicHttpAuthentication(jiraServerUri,
 							Constants.JIRA_USERNAME, Constants.JIRA_PASSWORD);
 			final NullProgressMonitor pm = new NullProgressMonitor();
-			Issue issue = restClient.getIssueClient().getIssue(getData("storyID"), pm);
+			Issue issue = restClient.getIssueClient().getIssue(YamlReader.getData("storyID"), pm);
 			System.out.println(issue.getAttachmentsUri());
 			System.out.println(issue.getCommentsUri());
 			// restClient.getIssueClient().addAttachments(pm, new
@@ -62,7 +63,7 @@ public class JIRAScenarioResultPublisher {
 			// Comment.valueOf("***********PASSED###############"));
 
 			Iterator<Transition> iter = client.getTransitions(
-					client.getIssue(getData("storyID"), pm), pm).iterator();
+					client.getIssue(YamlReader.getData("storyID"), pm), pm).iterator();
 			System.out.println(issue.getStatus().getName());
 			while (iter.hasNext()) {
 				Transition transition = iter.next();

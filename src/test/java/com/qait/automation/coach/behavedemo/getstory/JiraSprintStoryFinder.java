@@ -9,7 +9,7 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
-import com.qait.automation.SAM.assessment.behavedemo.utils.HttpClient;
+import com.qait.automation.utils.HttpClient;
 
 /**
  *

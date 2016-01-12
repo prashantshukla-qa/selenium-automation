@@ -39,4 +39,14 @@ public class ConfigPropertyReader {
     public static String getProperty(String property){
         return getProperty(defaultConfigFile, property);
     }
+    
+    public static boolean checkIfValueIsNull(String value) {
+		try {
+			value.isEmpty();
+			return false;
+		} catch (NullPointerException ex) {
+			return true;
+		}
+
+	}
 }

@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import org.codehaus.jettison.json.JSONException;
 
-import com.qait.automation.SAM.assessment.behavedemo.utils.HttpClient;
-import com.qait.automation.SAM.assessment.behavedemo.utils.JsonParser;
+import com.qait.automation.utils.HttpClient;
+import com.qait.automation.utils.JsonParser;
 import com.sun.jersey.api.client.ClientResponse;
 
 /**

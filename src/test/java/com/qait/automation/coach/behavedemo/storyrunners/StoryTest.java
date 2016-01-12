@@ -6,7 +6,7 @@
 package com.qait.automation.coach.behavedemo.storyrunners;
 
 import java.net.MalformedURLException;
-import static com.qait.automation.SAM.assessment.behavedemo.utils.ConfigPropertyReader.checkIfValueIsNull;
+import static com.qait.automation.utils.ConfigPropertyReader.checkIfValueIsNull;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,16 +36,12 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import org.jbehave.core.steps.ParameterConverters;
 
 import com.qait.automation.TestSessionInitiator;
-import com.qait.automation.SAM.assessment.behavedemo.getstory.Constants;
-import com.qait.automation.SAM.assessment.behavedemo.getstory.JiraSprintStoryFinder;
-import com.qait.automation.SAM.assessment.behavedemo.getstory.JiraStoryDownloader;
-import com.qait.automation.SAM.assessment.behavedemo.getstory.JiraStoryID;
-import com.qait.automation.SAM.assessment.behavedemo.stepdefs.LoginSteps;
-import com.qait.automation.SAM.assessment.behavedemo.stepdefs.PowerPointSteps;
-import com.qait.automation.SAM.assessment.behavedemo.stepdefs.WindowsQuestionSteps;
-import com.qait.automation.SAM.assessment.behavedemo.stepdefs.WordQuestionSteps;
-import com.qait.automation.SAM.assessment.behavedemo.stepdefs.ExcelQuestionSteps;
-import com.qait.automation.SAM.assessment.behavedemo.utils.FileHandler;
+import com.qait.automation.coach.behavedemo.getstory.Constants;
+import com.qait.automation.coach.behavedemo.getstory.JiraSprintStoryFinder;
+import com.qait.automation.coach.behavedemo.getstory.JiraStoryDownloader;
+import com.qait.automation.coach.behavedemo.getstory.JiraStoryID;
+import com.qait.automation.utils.FileHandler;
+import com.qait.demo.tests.Account_Creation_Test;
 
 /**
  *
@@ -141,7 +137,7 @@ public class StoryTest extends JUnitStories {
 
 	@Override
 	public InjectableStepsFactory stepsFactory() {
-		return new InstanceStepsFactory(configuration(), new ExcelQuestionSteps(), new LoginSteps(), new PowerPointSteps(), new WordQuestionSteps(), new WindowsQuestionSteps());
+		return new InstanceStepsFactory(configuration(), new Account_Creation_Test());
 	}
 
 	@Override

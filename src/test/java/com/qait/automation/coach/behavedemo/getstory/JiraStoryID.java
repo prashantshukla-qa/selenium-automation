@@ -1,6 +1,6 @@
 package com.qait.automation.coach.behavedemo.getstory;
 
-import static com.qait.automation.SAM.assessment.behavedemo.utils.ConfigPropertyReader.checkIfValueIsNull;
+import static com.qait.automation.utils.ConfigPropertyReader.checkIfValueIsNull;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,7 +13,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.qait.automation.SAM.assessment.behavedemo.utils.HttpClient;
+import com.qait.automation.utils.HttpClient;
 
 public class JiraStoryID {
 
