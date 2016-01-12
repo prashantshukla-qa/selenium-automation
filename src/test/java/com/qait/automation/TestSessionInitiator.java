@@ -1,8 +1,8 @@
 package com.qait.automation;
 
+import static com.qait.automation.utils.YamlReader.setYamlFilePath;
 import static com.qait.automation.utils.ConfigPropertyReader.getProperty;
 import static com.qait.automation.utils.YamlReader.getYamlValue;
-import static com.qait.automation.utils.YamlReader.setYamlFilePath;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,6 +69,11 @@ public class TestSessionInitiator {
         testInitiator(testname);
         this.testname = testname;
     }
+    
+	public TestSessionInitiator() {
+		wdfactory = new WebDriverFactory();
+		testInitiator();
+	}
 
     public TestSessionInitiator(String testname, String browserName) {
         wdfactory = new WebDriverFactory(browserName);
@@ -77,6 +82,23 @@ public class TestSessionInitiator {
 
     }
 
+    public void testInitiator() {
+		System.getProperty("user.dir");
+		_configureBrowser();
+		if (!System.getProperty("jiraBrowser").equals("null"))
+			browser = System.getProperty("jiraBrowser");
+		else
+			browser = _getSessionConfig().get("browser");
+
+//		if (browser.equalsIgnoreCase("Safari")) {
+//			((JavascriptExecutor) driver).executeScript(
+//					"var script = document.createElement('script');script.type = 'text/javascript';script.text='var event = document.createEvent(\"MessageEvent\");event.initMessageEvent(\"message\", false, false, {  type: \"alert\", text: \"hello\"}, window.location.origin, \"0\", window, null);window.dispatchEvent(event);window.addEventListener(\"message\", function(e) {  var e = document.createEvent(\"Events\");  e.initEvent(\"beforeload\", false, false);  var response = safari.self.tab.canLoad(e, e.data);  var responseEvent = document.createEvent(\"MessageEvent\");  responseEvent.initMessageEvent(\"message\", false, false, {    accepted: response.accepted,    response: response.value  }, window.location.origin, \"0\", window, null);  window.dispatchEvent(responseEvent);}, true);';document.head.appendChild(script);");
+//		}
+		setYamlFilePath();
+		_initPage();
+
+	}
+    
     private void testInitiator(String testname) {
         setYamlFilePath();
         _configureBrowser();
