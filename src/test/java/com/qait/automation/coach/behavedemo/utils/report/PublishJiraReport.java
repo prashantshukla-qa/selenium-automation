@@ -132,7 +132,7 @@ public class PublishJiraReport {
 							+ client.postHttpResponse(jiracommenturl, this.createJiraCommentJson(jiraStoryId))
 									.getEntity(String.class)
 							+ "\n";
-					// moveJiraTicket(jiraStoryId, this.storyStatus);
+					 moveJiraTicket(jiraStoryId, this.storyStatus);
 				
 					System.out.println("=================================================");
 					System.out.println("UPDATED THE JIRA TICKET");
@@ -154,7 +154,7 @@ public class PublishJiraReport {
 
 		if (getstoryStatus(_storystatus.values()).equalsIgnoreCase(PENDING)) {
 			System.out.println("NO JIRA ACTION");
-			getChangeAssigneeJson("rohitsingh@qainfotech.com");
+//			getChangeAssigneeJson("rohitsingh@qainfotech.com");
 			return "";
 		} else if (getstoryStatus(_storystatus.values()).equalsIgnoreCase(FAIL)) {
 
@@ -162,7 +162,7 @@ public class PublishJiraReport {
 
 				response = new HttpClient().postHttpResponse(jiratransitionurl, getReopenJiraTicketJson())
 						.getEntity(String.class);
-				getChangeAssigneeJson("rohitsingh@qainfotech.com");
+//				getChangeAssigneeJson("rohitsingh@qainfotech.com");
 			} catch (UniformInterfaceException e) {
 			}
 			System.out.println("\nREOPENING JIRA TICKET:- " + _jiraStoryId + "\n");
@@ -213,11 +213,11 @@ public class PublishJiraReport {
 	}
 
 	private String getCloseTicketJson() {
-		return "{ \"transition\": { \"id\": \"71\" }}";
+		return "{ \"transition\": { \"id\": \"391\" }}";
 	}
 
 	private String getReopenJiraTicketJson() {
-		return "{ \"transition\": { \"id\": \"121\" }}";
+		return "{ \"transition\": { \"id\": \"341\" }}";
 
 	}
 

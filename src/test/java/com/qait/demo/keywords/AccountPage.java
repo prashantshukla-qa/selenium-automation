@@ -85,9 +85,13 @@ public class AccountPage extends GetPage {
     public void verifyNewAccountIsCreated(String message) {
         wait.waitForPageToLoadCompletely();
         isElementDisplayed("txt_accountCreated", message);
-        isElementDisplayed("inp_address1");
         logMessage("[INFO]: Account has been successfully created and the panel for address information is displayed");
 
+    }
+    
+    public void verifyAddressPanelAppears(){
+    	 isElementDisplayed("inp_address1");
+    	 logMessage("[INFO]: Address panel is present on creating an account");    	 
     }
 
     public void clickSkipButton() {
