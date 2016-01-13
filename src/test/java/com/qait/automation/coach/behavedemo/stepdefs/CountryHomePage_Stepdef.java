@@ -12,10 +12,8 @@ public class CountryHomePage_Stepdef extends BaseStepTest {
 
 	@Given("I am on country home page")
 	public void givenIAmOnCountryHomePage() {
-		test.launchApplication(getData("base_url"));
-        test.homepage.verify_user_is_on_home_page();
-        test.homepage.navigate_to_country_specific_site(getData("country.area"), getData("country.name"));
-	}
+		test.homepage.verifySignInLink();
+  	}
 
 	@When("I navigate to account page")
 	public void whenINavigateToAccountPage() {

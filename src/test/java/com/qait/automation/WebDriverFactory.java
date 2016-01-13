@@ -4,6 +4,8 @@
  */
 package com.qait.automation;
 
+import static com.qait.automation.utils.ConfigPropertyReader.checkIfValueIsNull;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
@@ -20,27 +22,38 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Reporter;
 
 public class WebDriverFactory {
+	
+	private static String browser;
+	private static String seleniumserver;
+	private static String seleniumserverhost;
+	private static final DesiredCapabilities capabilities = new DesiredCapabilities();
 
-    private String browser = "";
-
-    public WebDriverFactory() {
-    }
-
-    public WebDriverFactory(String browserName) {
-        browser = browserName;
-    }
-
-    private static final DesiredCapabilities capabilities = new DesiredCapabilities();
-
+  
     public WebDriver getDriver(Map<String, String> seleniumconfig) {
-
-        if (browser == null || browser.isEmpty()) {
-            browser = seleniumconfig.get("browser");
-        }
+    	
+    	if (!System.getProperty("jiraBrowser").equals("null"))
+			browser = System.getProperty("jiraBrowser");
+		else {
+			if (!checkIfValueIsNull(System.getProperty("browser"))) {
+				browser = System.getProperty("browser");
+			} else {
+				browser = seleniumconfig.get("browser");
+			}
+		}
+		if (!checkIfValueIsNull(System.getProperty("browser"))) {
+			seleniumserver = System.getProperty("seleniumserver");
+		} else {
+			seleniumserver = seleniumconfig.get("seleniumserver");
+		}
+		if (!checkIfValueIsNull(System.getProperty("browser"))) {
+			seleniumserverhost = System.getProperty("seleniumserverhost");
+		} else {
+			seleniumserverhost = seleniumconfig.get("seleniumserverhost");
+		}
         Reporter.log("[INFO]: The test Browser is " + browser.toUpperCase()
                 + " !!!", true);
 
-        if (seleniumconfig.get("seleniumserver").equalsIgnoreCase("local")) {
+        if (seleniumserver.equalsIgnoreCase("local")) {
             if (browser.equalsIgnoreCase("firefox")) {
                 return getFirefoxDriver();
             } else if (browser.equalsIgnoreCase("chrome")) {
@@ -57,7 +70,7 @@ public class WebDriverFactory {
                 return setMobileDriver(seleniumconfig);
             }
         }
-        if (seleniumconfig.get("seleniumserver").equalsIgnoreCase("remote")) {
+        if (seleniumserver.equalsIgnoreCase("remote")) {
             return setRemoteDriver(seleniumconfig);
         }
         return new FirefoxDriver();
@@ -76,7 +89,9 @@ public class WebDriverFactory {
                 || (browser.equalsIgnoreCase("internet explorer"))) {
             cap = DesiredCapabilities.internetExplorer();
         }
-        String seleniuhubaddress = selConfig.get("seleniumserverhost");
+        
+        
+        String seleniuhubaddress = seleniumserverhost;
         URL selserverhost = null;
         try {
             selserverhost = new URL(seleniuhubaddress);

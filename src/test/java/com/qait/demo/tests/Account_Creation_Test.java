@@ -26,7 +26,7 @@ public class Account_Creation_Test {
 	@BeforeClass
 	@Parameters("browser")
 	public void start_test_session(@Optional String browser) {
-		test = new TestSessionInitiator("Account_Creation_Test", browser);
+		//test = new TestSessionInitiator("Account_Creation_Test", browser);
 	}
 
 	@Test

@@ -35,6 +35,13 @@ public class HomePageActions extends GetPage {
         verifyPageTitleContains();
     }
 
+    
+    public void verifySignInLink(){
+    	wait.waitForPageToLoadCompletely();
+        isElementDisplayed("btn_Account");
+        logMessage("[INFO]: Sign In link is available on country home page");
+    }
+    
     public void navigate_to_account_page() {
         wait.waitForPageToLoadCompletely();
         element("btn_Account").click();

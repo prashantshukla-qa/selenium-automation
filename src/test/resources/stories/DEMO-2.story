@@ -1,9 +1,5 @@
 Feature: Account Creation
 
-Meta:
-@storyName DEMO-2
-@component null
-@summary null
 
 Scenario: I want to create a new account
 Given I am on country home page

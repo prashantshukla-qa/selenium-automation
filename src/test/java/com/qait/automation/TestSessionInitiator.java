@@ -75,12 +75,12 @@ public class TestSessionInitiator {
 		testInitiator();
 	}
 
-    public TestSessionInitiator(String testname, String browserName) {
-        wdfactory = new WebDriverFactory(browserName);
-        testInitiator(testname);
-        this.testname = testname;
-
-    }
+//    public TestSessionInitiator(String testname, String browserName) {
+//        wdfactory = new WebDriverFactory(browserName);
+//        testInitiator(testname);
+//        this.testname = testname;
+//
+//    }
 
     public void testInitiator() {
 		System.getProperty("user.dir");

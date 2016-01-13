@@ -26,7 +26,7 @@ public class Login_Layout_Test {
     @BeforeClass
     @Parameters("browser")
     public void start_test_session(@Optional String browser) {
-        test = new TestSessionInitiator("Login_Layout_Tests", browser);
+       // test = new TestSessionInitiator("Login_Layout_Tests", browser);
     }
 
     @Test

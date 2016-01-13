@@ -20,13 +20,12 @@ public class AccountPage_Stepdef extends BaseStepTest {
     	test.accountpage.open_login_form();
 	}
     
-    
     @When("I login to the application with invalid username and valid password")
     public void whenILoginWithInvalidUsernameAndValidPassword(){
     	test.accountpage.login_to_the_application_as("Wrong@UserName.com", "Password1");
     }
     
-    @Then("I see the error message for wrong username as $errorMessage")
+    @Then("I see the error message with wrong username as $errorMessage")
     public void thenISeeErrorMessageForWrongUsername(@Named("errorMessage") String errorMessage){
     	test.accountpage.verify_login_error_message_is_displayed(errorMessage);
     }
@@ -55,7 +54,7 @@ public class AccountPage_Stepdef extends BaseStepTest {
         test.accountpage.verify_user_is_on_login_page();
     }
     
-    @Then("I see the error message for blank password as $errorMessage")
+    @Then("I see the error message with blank password as $errorMessage")
     public void thenISeeErrorMessageForBlankPassword(@Named("errorMessage") String errorMessage){
     	test.accountpage.verify_password_error_message_is_displayed(errorMessage);
     }
@@ -111,7 +110,5 @@ public class AccountPage_Stepdef extends BaseStepTest {
 	public void thenIClickSkipButton() {
 	 test.accountpage.clickSkipButton();
 	}
-
-	
 
 }

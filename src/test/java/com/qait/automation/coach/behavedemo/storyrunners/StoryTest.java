@@ -41,6 +41,8 @@ import com.qait.automation.coach.behavedemo.getstory.JiraSprintStoryFinder;
 import com.qait.automation.coach.behavedemo.getstory.JiraStoryDownloader;
 import com.qait.automation.coach.behavedemo.getstory.JiraStoryID;
 import com.qait.automation.coach.behavedemo.stepdefs.AccountPage_Stepdef;
+import com.qait.automation.coach.behavedemo.stepdefs.CountryHomePage_Stepdef;
+import com.qait.automation.coach.behavedemo.stepdefs.LoginSteps;
 import com.qait.automation.utils.FileHandler;
 import com.qait.demo.tests.Account_Creation_Test;
 
@@ -55,25 +57,25 @@ public class StoryTest extends JUnitStories {
 	private final CrossReference xref = new CrossReference();
 
 	public StoryTest() {
-		FileHandler.cleanStoryLocation();
+		//FileHandler.cleanStoryLocation();
 		System.out.println("=======================================");
 		System.out.println("Fetching Feature files for JIRA stories");
 		System.out.println("=======================================");
 		try {
-			for (String eachStory : getListOfStories()) {
-				if (eachStory != null) {
-					new JiraStoryDownloader(eachStory).storeJiraStoryLocally();
-
-				} else {
-
-					JiraSprintStoryFinder sprintStories = new JiraSprintStoryFinder(System.getProperty("rapidView"));
-					System.out.println("Sprint Stories:" + sprintStories);
-
-					sprintStories.getJiraSprintStories().stream().map((sprintStory) -> {return sprintStory;}).map((sprintStory) -> new JiraStoryDownloader(sprintStory)).forEach((jirastory) -> {
-						jirastory.storeJiraStoryLocally();
-					});
-				}
-			}
+//			for (String eachStory : getListOfStories()) {
+//				if (eachStory != null) {
+//					new JiraStoryDownloader(eachStory).storeJiraStoryLocally();
+//
+//				} else {
+//
+//					JiraSprintStoryFinder sprintStories = new JiraSprintStoryFinder(System.getProperty("rapidView"));
+//					System.out.println("Sprint Stories:" + sprintStories);
+//
+//					sprintStories.getJiraSprintStories().stream().map((sprintStory) -> {return sprintStory;}).map((sprintStory) -> new JiraStoryDownloader(sprintStory)).forEach((jirastory) -> {
+//						jirastory.storeJiraStoryLocally();
+//					});
+//				}
+//			}
 
 			configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
 					.doIgnoreFailureInView(true).useThreads(1).useStoryTimeoutInSecs(10000);
@@ -138,7 +140,7 @@ public class StoryTest extends JUnitStories {
 
 	@Override
 	public InjectableStepsFactory stepsFactory() {
-		return new InstanceStepsFactory(configuration(), new AccountPage_Stepdef());
+		return new InstanceStepsFactory(configuration(), new LoginSteps(), new AccountPage_Stepdef(), new CountryHomePage_Stepdef());
 	}
 
 	@Override
