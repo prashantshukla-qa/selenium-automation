@@ -25,10 +25,7 @@ import static com.qait.automation.utils.ConfigPropertyReader.getProperty;
  *
  * @author prashantshukla
  */
-/**
- * @author rohitsingh
- *
- */
+
 public class PublishJiraReport {
 
 	//private StoryXMLParser xml;
@@ -130,17 +127,17 @@ public class PublishJiraReport {
 						+ Constants.JIRA_COMMENT;
 
 				// update JIRA only if execEnv is QA
-				if (getProperty("tier").equalsIgnoreCase("qa")) {
+				
 					response = response
 							+ client.postHttpResponse(jiracommenturl, this.createJiraCommentJson(jiraStoryId))
 									.getEntity(String.class)
 							+ "\n";
 					// moveJiraTicket(jiraStoryId, this.storyStatus);
-				} else {
+				
 					System.out.println("=================================================");
-					System.out.println("NOT UPDATING THE JIRA TICKET AS execEnv IS NOT QA");
+					System.out.println("UPDATED THE JIRA TICKET");
 					System.out.println("=================================================");
-				}
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

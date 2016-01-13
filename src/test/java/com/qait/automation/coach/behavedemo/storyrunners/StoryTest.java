@@ -40,6 +40,8 @@ import com.qait.automation.coach.behavedemo.getstory.Constants;
 import com.qait.automation.coach.behavedemo.getstory.JiraSprintStoryFinder;
 import com.qait.automation.coach.behavedemo.getstory.JiraStoryDownloader;
 import com.qait.automation.coach.behavedemo.getstory.JiraStoryID;
+import com.qait.automation.coach.behavedemo.stepdefs.AccountPage_Stepdef;
+import com.qait.automation.coach.behavedemo.stepdefs.Login_StepDef;
 import com.qait.automation.utils.FileHandler;
 import com.qait.demo.tests.Account_Creation_Test;
 
@@ -137,7 +139,7 @@ public class StoryTest extends JUnitStories {
 
 	@Override
 	public InjectableStepsFactory stepsFactory() {
-		return new InstanceStepsFactory(configuration(), new Account_Creation_Test());
+		return new InstanceStepsFactory(configuration(), new AccountPage_Stepdef(), new Login_StepDef());
 	}
 
 	@Override

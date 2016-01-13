@@ -5,37 +5,12 @@ import java.util.List;
 
 public final class Constants {
 
-	public static final String JIRA_URL = System.getProperty("jirahost", "http://jira.cengage.com");
-	public static final String JIRA_USERNAME = "pshukla";
-	public static final String JIRA_PASSWORD = "Cengage8";
-	//
-	// public static final String JIRA_PROJECT_ID = "SLD";
-	//
-	// public static final String JIRA_PATH_RAPIDVIEW =
-	// "rest/greenhopper/1.0/xboard/work/allData.json?rapidViewId=";
-	// public static final String JIRA_PATH_JBEHAVE_STORY =
-	// "rest/jbehave-for-jira/1.0/find/for-issue/";
-	// public static final String JIRA_ISSUE = "rest/api/2/issue/";
-	//
-	// public static final String JIRA_COMMENT = "comment/";
-	// public static final String JIRA_ASSIGNEE = "assignee/";
-	// public static final String JIRA_TRANSITION = "transitions/";
-	//
-	// public static final List<String> ALLOWED_STATUS = Arrays.asList( "Ready
-	// For QA");
-	// public static final List<String> ALLOWED_TYPE = Arrays.asList("Story",
-	// "Bug", "Epic");
-	//
-	// public static final String STORY_LOC = "./src/test/resources/stories/";
-	// //DO NOT CHANGE THIS. MIGHT BREAK JBEHAVE
-	// public static final String STORY_XML_LOC = "./target/jbehave/";
+	public static final String JIRA_URL = "http://10.0.9.62:8080";
+	public static final String JIRA_USERNAME = "umangtiwari";
+	public static final String JIRA_PASSWORD = "Qait@1234";
 
-	// public static final String JIRA_URL = System.getProperty("jirahost",
-	// "http://tapjira.qainfotech.com:8080");
-	// public static final String JIRA_USERNAME = "tapdemo@qainfotech.com";
-	// public static final String JIRA_PASSWORD = "qainfotech";
 
-	public static final String JIRA_PROJECT_ID = "ST16";
+	public static final String JIRA_PROJECT_ID = "DEMO";
 	public static final String JIRA_PATH_RAPIDVIEW = "/rest/greenhopper/1.0/xboard/work/allData.json?rapidViewId=";
 	public static final String JIRA_PATH_JBEHAVE_STORY = "rest/jbehave-for-jira/1.0/find/for-issue/";
 	public static final String JIRA_PATH_BEHAVE_STORY = "/rest/cucumber/1.0/issue/";
@@ -65,9 +40,9 @@ public final class Constants {
 	public static final String STORY_XML_LOC = "target/jbehave/";
 	public static final String JIRA_PATH_SPECIFIC_STORY = "/rest/api/2/search?";
 	public static final String JQL_STORY_OF_TYPE = "jql=project = " + JIRA_PROJECT_ID.toLowerCase()
-			+ " AND issuetype = \"automation sub-task\" AND status in (Open, \"Ready for QA\") AND text ~ ";
+			+ " AND issuetype = \"story\" AND status in (Open, \"Ready for QA\") AND text ~ ";
 	public static final String JQL_DEFAULT_STORY = "jql=project = " + JIRA_PROJECT_ID.toLowerCase()
-			+ " AND issuetype = \"automation sub-task\" AND status in (Open, \"Ready for QA\")";
+			+ " AND issuetype = \"story\" AND status in (Open, \"Ready for QA\")";
 	public static final String JQL_STORY_SUMMARY = "&fields=summary";
 	public static final String JQL_STORY_COMPONENT = "AND component";
 	public static final String JQL_TASK = "jql=project = " + JIRA_PROJECT_ID.toLowerCase()

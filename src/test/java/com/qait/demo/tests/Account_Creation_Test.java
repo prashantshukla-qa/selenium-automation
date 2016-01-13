@@ -64,7 +64,7 @@ public class Account_Creation_Test {
 	@Test
 	public void Test04_Verify_Account_Is_Created() {
 
-		// test.accountpage.verifyNewAccountIsCreated(getData("registration.successMessage"));
+		 test.accountpage.verifyNewAccountIsCreated(getData("registration.successMessage"));
 		//
 		// test.accountpage.clickSkipButton();
 		//
