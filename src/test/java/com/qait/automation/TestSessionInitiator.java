@@ -145,6 +145,11 @@ public class TestSessionInitiator {
     }
 
     public void closeBrowserSession() {
+    	
+    	if(driver ==null){
+    		 Reporter.log("[INFO]: Problems with driver before closing", true);
+    		return;
+    	}
         Reporter.log("[INFO]: The Test: " + this.testname.toUpperCase() + " COMPLETED!"
                 + "\n", true);
 

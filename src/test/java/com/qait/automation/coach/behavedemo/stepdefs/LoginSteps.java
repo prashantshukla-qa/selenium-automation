@@ -21,24 +21,26 @@ public class LoginSteps extends BaseStepTest {
 			test.launchApplication(getData("base_url"));
 			test.homepage.verify_user_is_on_home_page();
 	        test.homepage.navigate_to_country_specific_site(getData("country.area"), getData("country.name"));
-	        }
+	      }
 	}
 
-	@AfterScenario
-	public static void TeardownScenario() {
-//		test.closeBrowserSession();
-//		test = null;
-	}
+//	@AfterScenario
+//	public static void TeardownScenario() {
+////		test.closeBrowserSession();
+////		test = null;
+//	}
 
 	@AfterStory
 	public static void TeardownStory() {
-		//test.closeBrowserSession();
+		if(test!=null){
+			test.closeBrowserSession();
+		}
 	}
 
 	@BeforeStory
 	public void test(@Named("storyName") String storyName) {
 //		System.out.println("==================================");
-//		System.out.println("Starting the test");
+		System.out.println("Starting the test");
 //		System.out.println("==================================");
 ////		Map<String, String> properties = JiraStoryDownloader.getStoryDetails(storyName);
 ////		for (String key : properties.keySet()) {
@@ -46,10 +48,9 @@ public class LoginSteps extends BaseStepTest {
 ////		}
 ////		   
 			System.setProperty("storyIdValue", storyName);
-//			BaseStepTest.baseStepTest();
-//			test.launchApplication(getData("base_url"));
-//			test.homepage.verify_user_is_on_home_page();
-//	        test.homepage.navigate_to_country_specific_site(getData("country.area"), getData("country.name"));
-//		
+			BaseStepTest.baseStepTest();
+			test.launchApplication(getData("base_url"));
+			test.homepage.verify_user_is_on_home_page();
+	        test.homepage.navigate_to_country_specific_site(getData("country.area"), getData("country.name"));		
 	}
 }

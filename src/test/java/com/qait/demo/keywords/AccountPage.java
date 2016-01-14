@@ -23,6 +23,7 @@ public class AccountPage extends GetPage {
     }
 
     public void open_login_form() {
+    	wait.hardWait(1);
         element("btn_login").click();
     }
 
@@ -42,6 +43,7 @@ public class AccountPage extends GetPage {
     }
 
     public void login_to_the_application_as(String userName, String password) {
+    	wait.hardWait(1);
         element("inp_LoginEmail").clear();
         element("inp_LoginEmail").sendKeys(userName);
         element("inp_LoginPassword").clear();

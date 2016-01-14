@@ -57,25 +57,25 @@ public class StoryTest extends JUnitStories {
 	private final CrossReference xref = new CrossReference();
 
 	public StoryTest() {
-		//FileHandler.cleanStoryLocation();
+		FileHandler.cleanStoryLocation();
 		System.out.println("=======================================");
 		System.out.println("Fetching Feature files for JIRA stories");
 		System.out.println("=======================================");
 		try {
-//			for (String eachStory : getListOfStories()) {
-//				if (eachStory != null) {
-//					new JiraStoryDownloader(eachStory).storeJiraStoryLocally();
-//
-//				} else {
-//
-//					JiraSprintStoryFinder sprintStories = new JiraSprintStoryFinder(System.getProperty("rapidView"));
-//					System.out.println("Sprint Stories:" + sprintStories);
-//
-//					sprintStories.getJiraSprintStories().stream().map((sprintStory) -> {return sprintStory;}).map((sprintStory) -> new JiraStoryDownloader(sprintStory)).forEach((jirastory) -> {
-//						jirastory.storeJiraStoryLocally();
-//					});
-//				}
-//			}
+			for (String eachStory : getListOfStories()) {
+				if (eachStory != null) {
+					new JiraStoryDownloader(eachStory).storeJiraStoryLocally();
+
+				} else {
+
+					JiraSprintStoryFinder sprintStories = new JiraSprintStoryFinder(System.getProperty("rapidView"));
+					System.out.println("Sprint Stories:" + sprintStories);
+
+					sprintStories.getJiraSprintStories().stream().map((sprintStory) -> {return sprintStory;}).map((sprintStory) -> new JiraStoryDownloader(sprintStory)).forEach((jirastory) -> {
+						jirastory.storeJiraStoryLocally();
+					});
+				}
+			}
 
 			configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
 					.doIgnoreFailureInView(true).useThreads(1).useStoryTimeoutInSecs(10000);
