@@ -69,6 +69,8 @@ public class PublishJiraReport {
 						jsonResultText = jsonResultText + "\\t{color:red}" + step + " - *Failed*" + "{color}" + "\\n";
 					} else if (stepResults.get(step).equalsIgnoreCase("notPerformed")) {
 						jsonResultText = jsonResultText + "\\t{color:blue}" + step + " - *Skipped*" + "{color}" + "\\n";
+					}else if (stepResults.get(step).equalsIgnoreCase("pending")) {
+						jsonResultText = jsonResultText + "\\t{color:orange}" + step + " - *Implementation Pending*" + "{color}" + "\\n";
 					}
 				}
 				this.storyStatus.put(jiraStoryId + ":" + "Scenario " + i, PASS);
@@ -83,6 +85,8 @@ public class PublishJiraReport {
 						jsonResultText = jsonResultText + "\\t{color:red}" + step + " - *Failed*" + "{color}" + "\\n";
 					} else if (stepResults.get(step).equalsIgnoreCase("notPerformed")) {
 						jsonResultText = jsonResultText + "\\t{color:blue}" + step + " - *Skipped*" + "{color}" + "\\n";
+					}else if (stepResults.get(step).equalsIgnoreCase("pending")) {
+						jsonResultText = jsonResultText + "\\t{color:orange}" + step + " - *Implementation Pending*" + "{color}" + "\\n";
 					}
 				}
 				this.storyStatus.put(jiraStoryId + ":" + "Scenario " + i, FAIL);
@@ -100,7 +104,7 @@ public class PublishJiraReport {
 					} else if (stepResults.get(step).equalsIgnoreCase("skipped")) {
 						jsonResultText = jsonResultText + "\\t{color:blue}" + step + " - *Skipped*" + "{color}" + "\\n";
 					} else if (stepResults.get(step).equalsIgnoreCase("pending")) {
-						jsonResultText = jsonResultText + "\\t{color:blue}" + step + " - *Pending*" + "{color}" + "\\n";
+						jsonResultText = jsonResultText + "\\t{color:orange}" + step + " - *Pending*" + "{color}" + "\\n";
 					}
 				}
 				this.storyStatus.put(jiraStoryId + ":" + "Scenario " + i, PENDING);

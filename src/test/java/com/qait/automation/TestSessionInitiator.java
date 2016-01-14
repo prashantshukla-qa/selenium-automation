@@ -154,7 +154,6 @@ public class TestSessionInitiator {
 //                + "\n", true);
 
         driver.close();
-        System.out.println("fdddddddddddd");
         //	Thread.sleep(3000);// [INFO]: this to wait before you close every
 
     }
