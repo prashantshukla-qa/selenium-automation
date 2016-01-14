@@ -15,10 +15,10 @@ import org.jbehave.core.annotations.When;
 public class AccountPage_Stepdef extends BaseStepTest {
 	
     
-//    @When("I open login form")
-//	public void whenIOpenLoginForm() {
-//    	test.accountpage.open_login_form();
-//	}
+    @When("I open login form")
+	public void whenIOpenLoginForm() {
+    	test.accountpage.open_login_form();
+	}
     
     @When("I login to the application with invalid username and valid password")
     public void whenILoginWithInvalidUsernameAndValidPassword(){

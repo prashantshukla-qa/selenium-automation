@@ -53,14 +53,8 @@ public class JIRAScenarioResultPublisher {
 			Issue issue = restClient.getIssueClient().getIssue(YamlReader.getData("storyID"), pm);
 			System.out.println(issue.getAttachmentsUri());
 			System.out.println(issue.getCommentsUri());
-			// restClient.getIssueClient().addAttachments(pm, new
-			// URI("http://10.0.20.227:8080/rest/api/latest/issue/10001/attachments"),new
-			// File("./result_upload_on_jira.txt") );
 
 			final IssueRestClient client = restClient.getIssueClient();
-			// client.addComment(pm, new
-			// URI("http://10.0.20.227:8080/rest/api/latest/issue/10001/comment"),
-			// Comment.valueOf("***********PASSED###############"));
 
 			Iterator<Transition> iter = client.getTransitions(
 					client.getIssue(YamlReader.getData("storyID"), pm), pm).iterator();

@@ -5,12 +5,12 @@ import java.util.List;
 
 public final class Constants {
 
-	public static final String JIRA_URL = "http://10.0.9.62:8080";
-	public static final String JIRA_USERNAME = "umangtiwari";
-	public static final String JIRA_PASSWORD = "Qait@1234";
+	public static final String JIRA_URL = "http://localhost:8080";
+	public static final String JIRA_USERNAME = "automation-script";
+	public static final String JIRA_PASSWORD = "Qait@123";
 
 
-	public static final String JIRA_PROJECT_ID = "DEMO";
+	public static final String JIRA_PROJECT_ID = "COACH";
 	public static final String JIRA_PATH_RAPIDVIEW = "/rest/greenhopper/1.0/xboard/work/allData.json?rapidViewId=";
 	public static final String JIRA_PATH_JBEHAVE_STORY = "rest/jbehave-for-jira/1.0/find/for-issue/";
 	public static final String JIRA_PATH_BEHAVE_STORY = "/rest/cucumber/1.0/issue/";
@@ -31,13 +31,9 @@ public final class Constants {
 	public static final List<String> ALLOWED_TYPE = Arrays.asList("Story", "Bug", "Epic", "Test", "Task");
 
 	public static final String STORY_LOC = "./src/test/resources/stories/"; // DO
-																			// NOT
-																			// CHANGE
-																			// THIS.
-																			// MIGHT
-																			// BREAK
-																			// JBEHAVE
-	public static final String STORY_XML_LOC = "target/jbehave/";
+        
+        
+        public static final String STORY_XML_LOC = "target/jbehave/";
 	public static final String JIRA_PATH_SPECIFIC_STORY = "/rest/api/2/search?";
 	public static final String JQL_STORY_OF_TYPE = "jql=project = " + JIRA_PROJECT_ID.toLowerCase()
 			+ " AND issuetype = \"story\" AND status in (Open, \"Ready for QA\") AND text ~ ";

@@ -134,17 +134,17 @@ public class JiraStoryDownloader {
 			String response = client.getHttpResponse(url.toString()).getEntity(String.class);
 			JsonParser parser = new JsonParser();
 			JsonObject obj = (JsonObject) parser.parse(response);
+                        summary = StringUtils.remove(obj.get("issues").getAsJsonArray().get(0).getAsJsonObject()
+					.get("fields").getAsJsonObject().get("summary").toString(), '"').toLowerCase();
 			component = StringUtils
 					.remove(obj.get("issues").getAsJsonArray().get(0).getAsJsonObject().get("fields").getAsJsonObject()
 							.get("components").getAsJsonArray().get(0).getAsJsonObject().get("name").toString(), '"');
 			component = component.split(" ")[1].toLowerCase();
-			summary = StringUtils.remove(obj.get("issues").getAsJsonArray().get(0).getAsJsonObject()
-					.get("fields").getAsJsonObject().get("summary").toString(), '"').toLowerCase();
+			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IndexOutOfBoundsException ex) {
 			System.out.println("Component is not defined in the story");
-			ex.printStackTrace();
 		}
 
 		return component + " " + summary;

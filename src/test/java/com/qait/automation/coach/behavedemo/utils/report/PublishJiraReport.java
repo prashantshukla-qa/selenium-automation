@@ -217,12 +217,11 @@ public class PublishJiraReport {
 	}
 
 	private String getCloseTicketJson() {
-		return "{ \"transition\": { \"id\": \"391\" }}";
+		return "{ \"transition\": { \"id\": \"51\" }}";
 	}
 
 	private String getReopenJiraTicketJson() {
-		return "{ \"transition\": { \"id\": \"341\" }}";
+		return "{ \"transition\": { \"id\": \"41\" }}";
 
 	}
-
 }
