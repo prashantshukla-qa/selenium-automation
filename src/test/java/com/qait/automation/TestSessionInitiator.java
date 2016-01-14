@@ -150,10 +150,11 @@ public class TestSessionInitiator {
     		 Reporter.log("[INFO]: Problems with driver before closing", true);
     		return;
     	}
-        Reporter.log("[INFO]: The Test: " + this.testname.toUpperCase() + " COMPLETED!"
-                + "\n", true);
+//        Reporter.log("[INFO]: The Test: " + this.testname.toUpperCase() + " COMPLETED!"
+//                + "\n", true);
 
-        driver.quit();
+        driver.close();
+        System.out.println("fdddddddddddd");
         //	Thread.sleep(3000);// [INFO]: this to wait before you close every
 
     }
