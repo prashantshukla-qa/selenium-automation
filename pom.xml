@@ -10,8 +10,8 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <testng.xml>TestNG.xml</testng.xml>
-        <seleniumver>2.48.2</seleniumver>
+        <testng.xml>all_tests.xml</testng.xml>
+        <seleniumver>3.0.0-beta2</seleniumver>
     </properties>
 
     <dependencies>
@@ -46,8 +46,7 @@
             <artifactId>snakeyaml</artifactId>
             <version>1.10</version>
         </dependency>
-        <!-- The dependecies below are to make sure that hamcrest matcher does 
-        not conflict with junit -->
+        <!-- The dependecies below are to make sure that hamcrest matcher does not conflict with junit -->
 
         <dependency>
             <groupId>junit</groupId>

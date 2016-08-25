@@ -9,7 +9,7 @@ Automated Test Suite. This is a demo of Selenium Testing Tool used for automated
 
 #### System Requirement:
 
-* JDK 1.8 or above (I hope that future releases are backword compatible)
+* JDK 1.8 or above (I hope that future releases are backward compatible)
 * Maven 3.1
 * Eclipse or IDE of choice in case there is need to update the script. (optional)
     

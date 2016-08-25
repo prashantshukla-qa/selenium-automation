@@ -8,9 +8,10 @@ bin
 .log
 .DS_Store
 *.class
-
 #selenium drivers
 *.*driver.exe
+*.iml
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -24,3 +25,4 @@ bin
 hs_err_pid*
 */bin/
 /bin/
+

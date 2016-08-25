@@ -115,9 +115,9 @@ public class WebDriverFactory {
     }
 
     private static WebDriver getFirefoxDriver() {
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("browser.cache.disk.enable", false);
-        return new FirefoxDriver(profile);
+      DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+      capabilities.setCapability("marionette", true);
+        return new FirefoxDriver(capabilities);
     }
 
     private WebDriver setMobileDriver(Map<String, String> selConfig) {
