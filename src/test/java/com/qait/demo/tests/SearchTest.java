@@ -34,9 +34,9 @@ public void Step02_Search_All_Content() {
         test.resultPage.verifyResults(searchTerm);
 }
 
-@Test(dependsOnMethods = "Step02_Search_All_Content")
-public void Step03_Verify_Filters() {
-        String numberOfResults = test.resultPage.clickOnTextFormatFilter();
-        test.resultPage.verifyResultsAfterFilter(numberOfResults);
-}
+// @Test(dependsOnMethods = "Step02_Search_All_Content")
+// public void Step03_Verify_Filters() {
+//         String numberOfResults = test.resultPage.clickOnTextFormatFilter();
+//         test.resultPage.verifyResultsAfterFilter(numberOfResults);
+// }
 }
