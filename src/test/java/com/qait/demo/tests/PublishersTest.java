@@ -20,37 +20,37 @@ String breadcrumbTitle = getYamlValue("publisherPage.breadcrumbTitle"),
        changedNumberOfItems =  getYamlValue("publisherPage.changedNumberOfItemsPerPage");
 
 @Test
-public void Step01_Launch_Application() {
+public void Test01_Launch_Application() {
         test.launchApplication();
         test.homePage.verifyUserIsOnHomePage();
 }
 
-@Test(dependsOnMethods = "Step01_Launch_Application")
-public void Step02_Login_To_The_Application() {
+@Test(dependsOnMethods = "Test01_Launch_Application")
+public void Test02_Login_To_The_Application() {
         test.homePage.clickOnSignInLink();
         test.loginPage.enterLoginCredentials(getYamlValue("username"), getYamlValue("password"));
         test.homePage.verifyUserIsOnHomePage();
 }
 
-@Test(dependsOnMethods = "Step02_Login_To_The_Application")
-public void Step03_Click_On_Publishers_Tab() {
+@Test(dependsOnMethods = "Test02_Login_To_The_Application")
+public void Test03_Click_On_Publishers_Tab() {
         test.homePage.clickOnPublishersTab();
         test.publishersPage.verifyUserIsOnPublishersPage(breadcrumbTitle);
 }
 
-@Test(dependsOnMethods = "Step03_Click_On_Publishers_Tab")
-public void Step04_Browse_By_Letter() {
+@Test(dependsOnMethods = "Test03_Click_On_Publishers_Tab")
+public void Test04_Browse_By_Letter() {
         String letter = test.publishersPage.selectAnyRandomLetter();
         test.publishersPage.verifyResults(letter);
 }
 
-@Test(dependsOnMethods = "Step04_Browse_By_Letter")
-public void Step05_Verify_Default_Number_Of_Items_Per_Page() {
+@Test(dependsOnMethods = "Test04_Browse_By_Letter")
+public void Test05_Verify_Default_Number_Of_Items_Per_Page() {
         test.publishersPage.verifyNumberOfItems(defaultNumberOfItems);
 }
 
-@Test(dependsOnMethods = "Step05_Verify_Default_Number_Of_Items_Per_Page")
-public void Step06_Change_Number_Of_Items_Per_Page_And_Verify() {
+@Test(dependsOnMethods = "Test05_Verify_Default_Number_Of_Items_Per_Page")
+public void Test06_Change_Number_Of_Items_Per_Page_And_Verify() {
         test.publishersPage.changeItemsPerPage(changedNumberOfItems);
         test.publishersPage.verifyNumberOfItems(changedNumberOfItems);
 }

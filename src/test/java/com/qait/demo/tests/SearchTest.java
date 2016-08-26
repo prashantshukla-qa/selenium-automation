@@ -20,20 +20,20 @@ String username = getYamlValue("username"),
        searchTerm = getYamlValue("homePage.searchTerm");
 
 @Test
-public void Step01_Launch_Application() {
+public void Test01_Launch_Application() {
         test.launchApplication();
         test.homePage.verifyUserIsOnHomePage();
 }
 
-@Test(dependsOnMethods = "Step01_Launch_Application")
-public void Step02_Login_To_The_Application() {
+@Test(dependsOnMethods = "Test01_Launch_Application")
+public void Test02_Login_To_The_Application() {
         test.homePage.clickOnSignInLink();
         test.loginPage.enterLoginCredentials(username, password);
         test.homePage.verifyUserIsOnHomePage();
 }
 
-@Test(dependsOnMethods = "Step02_Login_To_The_Application")
-public void Step03_Search_All_Content() {
+@Test(dependsOnMethods = "Test02_Login_To_The_Application")
+public void Test03_Search_All_Content() {
         test.homePage.enterSearchTerm(searchTerm);
         test.resultPage.verifySearchTermAppearsInBreadCrumb(searchTerm);
         test.resultPage.verifyResults(searchTerm);
