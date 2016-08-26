@@ -1,30 +1,17 @@
-ProjectName: Alexander Street Press - Demo
-base_url: http://search.alexanderstreet.com/
-countryName: UNITED KINGDOM
+baseUrl: http://search.alexanderstreet.com/
 
-registration:
-  inputs:
-    field1:
-     label: FirstName
-     value: QA
-    field2:
-     label: LastName
-     value: Automation
-    field3:
-     label: Email
-     value: test
-    field4:
-     label: ConfirmEmail
-     value: test
-    field5:
-     label: Password
-     value: test123456
-    field6:
-     label: ConfirmPassword
-     value: test123456
-  successMessage: "Your account has been created. Would you like checkout to be even easier? Please complete your address below."
+username: utkarshakhouri@qainfotech.net
+password: Qait@123
 
+homePage: 
+  searchTerm: Islam
+  
+publisherPage:
+  breadcrumbTitle: Browse Publishers
+  defaultNumberOfItemsPerPage: 25
+  changedNumberOfItemsPerPage: 50
+  
 email:
-    send: yes
-    recepients:
-     recepient1: prashantshukla@qainfotech.com
+    recepients: 
+        recepient1: prateekshachauhan@qainfotech.com
+        recepient2: prashantshukla@qainfotech.com

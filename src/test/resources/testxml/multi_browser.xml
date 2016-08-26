@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="ASP Parallel Test Demo" parallel="tests" thread-count="2">
+    <tests>
+        <test name="ASP Search And Publisher Test on Firefox" preserve-order="true" enabled="true">
+            <parameter name="browser" value="firefox"/>
+            <classes>
+                <class name="com.qait.demo.tests.SearchTest"/>
+                <class name="com.qait.demo.tests.PublishersTest"/>
+            </classes>
+        </test>
+        <test name="ASP Search And Publisher Test on Chrome" preserve-order="true" enabled="true">
+            <parameter name="browser" value="chrome"/>
+            <classes>
+                <class name="com.qait.demo.tests.SearchTest"/>
+                <class name="com.qait.demo.tests.PublishersTest"/>
+            </classes>
+        </test>
+    </tests>
+</suite>

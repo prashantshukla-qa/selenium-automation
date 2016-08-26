@@ -1,33 +1,17 @@
-ProjectName: Coach Inc - Demo
-base_url: http://www.coach.com/international-landing.html?LOC=Footer-International
+baseUrl: http://search.alexanderstreet.com/
 
-country:
-    area: EUROPE
-    name: UNITED KINGDOM
+username: utkarshakhouri@qainfotech.net
+password: Qait@123
 
-registration:
-  inputs:
-    field_1:
-     label: FirstName
-     value: QA
-    field_2:
-     label: LastName
-     value: Automation
-    field_3:
-     label: Email
-     value: test@qainfotech.com
-    field_4:
-     label: ConfirmEmail
-     value: test@qainfotech.com
-    field_5:
-     label: Password
-     value: test123456
-    field_6:
-     label: ConfirmPassword
-     value: test123456
-  successMessage: "Your account has been created. Would you like checkout to be even easier? Please complete your address below."
-
+homePage: 
+  searchTerm: Islam
+  
+publisherPage:
+  breadcrumbTitle: Browse Publishers
+  defaultNumberOfItemsPerPage: 25
+  changedNumberOfItemsPerPage: 50
+  
 email:
-    send: yes
-    recepients:
-     recepient1: prashantshukla@qainfotech.com
+    recepients: 
+        recepient1: prateekshachauhan@qainfotech.com
+        recepient2: prashantshukla@qainfotech.com

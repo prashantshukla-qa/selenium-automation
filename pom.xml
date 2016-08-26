@@ -10,7 +10,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <testng.xml>all_tests.xml</testng.xml>
+        <testng.xml>TestNG.xml</testng.xml>
         <seleniumver>3.0.0-beta2</seleniumver>
     </properties>
 

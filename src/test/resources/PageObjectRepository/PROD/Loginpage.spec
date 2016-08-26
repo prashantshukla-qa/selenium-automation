@@ -1,6 +1,8 @@
-Page Title: Coach: My Account
+Page Title: User account | Alexander Street
 
 #Object Definitions
 ====================================================================================
-txt_Welcome          css                   .welcome-massage
+txtbox_userName						id						edit-name
+txtbox_password						id						edit-pass
+btn_login							    id						edit-submit
 ====================================================================================

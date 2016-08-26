@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name=" Search Automated Test Suite" preserve-order="true" thread-count="2" parallel = "tests">
+	
+	<test name="Search Test">
+		<classes>
+			<class name="com.qait.demo.tests.SearchTest" />
+		</classes>
+	</test>
+	
+	<test name="Publishers Test">
+		<classes>
+			<class name="com.qait.demo.tests.PublishersTest" />
+		</classes>
+	</test>
+	
+</suite>
