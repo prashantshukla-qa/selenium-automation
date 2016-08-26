@@ -10,18 +10,16 @@ import org.openqa.selenium.WebDriver;
 
 public class PageInit{
   
-  WebDriver driver;
-  
   public HomePageActions homePage;
   public ResultsPageActions resultPage;
   public LoginPageActions loginPage;
   public PublishersPageActions publishersPage;
   
-  protected void _initPage() {
-          loginPage = new LoginPageActions(this.driver);
-          homePage = new HomePageActions(this.driver);
-          resultPage = new ResultsPageActions(this.driver);
-          publishersPage = new PublishersPageActions(this.driver);
+  protected void _initPage(WebDriver driver) {
+          loginPage = new LoginPageActions(driver);
+          homePage = new HomePageActions(driver);
+          resultPage = new ResultsPageActions(driver);
+          publishersPage = new PublishersPageActions(driver);
   }
   
 }

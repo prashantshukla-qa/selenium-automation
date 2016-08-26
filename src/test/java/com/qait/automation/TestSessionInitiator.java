@@ -46,15 +46,15 @@ public WebDriver getDriver() {
 public TestSessionInitiator(String testname) {
         wdfactory = new WebDriverFactory();
         testInitiator(testname);
-        //PageInit(getDriver);
+        _initPage(getDriver());
         this.testname = testname;
 }
 
 public TestSessionInitiator(String testname, String browserName) {
         wdfactory = new WebDriverFactory(browserName);
         testInitiator(testname);
+        _initPage(getDriver());
         this.testname = testname;
-
 }
 
 private void testInitiator(String testname) {
@@ -94,7 +94,6 @@ public void launchApplication(String base_url) {
         Reporter.log("\n[INFO]: The application url is :- " + base_url, true);
         driver.manage().deleteAllCookies();
         driver.get(base_url);
-
 }
 
 public void openUrl(String url) {
@@ -106,8 +105,6 @@ public void closeBrowserSession() {
                      + "\n", true);
 
         driver.quit();
-        //	Thread.sleep(3000);// [INFO]: this to wait before you close every
-
 }
 
 public void closeTestSession() {
