@@ -20,23 +20,23 @@ String username = getYamlValue("username"),
        searchTerm = getYamlValue("homePage.searchTerm");
 
 @Test
-public void Step01_Login_To_The_Application() {
+public void Step01_Launch_Application() {
         test.launchApplication();
+        test.homePage.verifyUserIsOnHomePage();
+}
+
+@Test(dependsOnMethods = "Step01_Launch_Application")
+public void Step02_Login_To_The_Application() {
         test.homePage.clickOnSignInLink();
         test.loginPage.enterLoginCredentials(username, password);
         test.homePage.verifyUserIsOnHomePage();
 }
 
-@Test(dependsOnMethods = "Step01_Login_To_The_Application")
-public void Step02_Search_All_Content() {
+@Test(dependsOnMethods = "Step02_Login_To_The_Application")
+public void Step03_Search_All_Content() {
         test.homePage.enterSearchTerm(searchTerm);
         test.resultPage.verifySearchTermAppearsInBreadCrumb(searchTerm);
         test.resultPage.verifyResults(searchTerm);
 }
 
-// @Test(dependsOnMethods = "Step02_Search_All_Content")
-// public void Step03_Verify_Filters() {
-//         String numberOfResults = test.resultPage.clickOnTextFormatFilter();
-//         test.resultPage.verifyResultsAfterFilter(numberOfResults);
-// }
 }
