@@ -30,7 +30,7 @@ public void take_screenshot_on_failure(ITestResult result) {
 
 @AfterClass
 public void close_Test_Session() {
-        test.closeBrowserSession();
+      //  test.closeBrowserSession();
 }
 
 }

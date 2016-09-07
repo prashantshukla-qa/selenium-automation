@@ -57,12 +57,12 @@ public class BaseUi {
 		return driver.getCurrentUrl();
 	}
 
-	protected void verifyPageTitleExact() {
+	protected boolean verifyPageTitleExact() {
 		String pageTitle = getPageTitleFromFile(pageName);
-		verifyPageTitleExact(pageTitle);
+		return verifyPageTitleExact(pageTitle);
 	}
 
-	protected void verifyPageTitleExact(String expectedPagetitle) {
+	protected boolean verifyPageTitleExact(String expectedPagetitle) {
 		if (((expectedPagetitle == "") || (expectedPagetitle == null) || (expectedPagetitle
 				.isEmpty()))
 				&& (getProperty("browser").equalsIgnoreCase("chrome"))) {
@@ -72,10 +72,12 @@ public class BaseUi {
 			wait.waitForPageTitleToBeExact(expectedPagetitle.toString());
 			logMessage("[ASSERT PASSED]: PageTitle for " + pageName
 					+ " is exactly: '" + expectedPagetitle + "'");
+					return true;
 		} catch (TimeoutException ex) {
 			logMessage("[ASSERT FAILED]: PageTitle for " + pageName
 					+ " is not exactly: '" + expectedPagetitle
 					+ "'!!!\n instead it is :- " + driver.getTitle());
+					return false;
 		}
 	}
 

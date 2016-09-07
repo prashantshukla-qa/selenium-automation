@@ -1,8 +1,8 @@
-Page Title: User account | Alexander Street
+Page Title: APA Login
 
 #Object Definitions
 ====================================================================================
-txtbox_userName						id						edit-name
-txtbox_password						id						edit-pass
-btn_login							    id						edit-submit
+txtbox_userName						css						#username
+txtbox_password						css						#password
+btn_login							    id						loginBtnccc
 ====================================================================================

@@ -88,7 +88,7 @@ public class WebDriverFactory {
     }
 
     private static WebDriver getChromeDriver(String driverpath) {
-        System.setProperty("webdriver.chrome.driver", driverpath);
+        //System.setProperty("webdriver.chrome.driver", driverpath);
         ChromeOptions options = new ChromeOptions();
         DesiredCapabilities cap = DesiredCapabilities.chrome();
         cap.setCapability(ChromeOptions.CAPABILITY, options);
@@ -136,7 +136,7 @@ public class WebDriverFactory {
             e.printStackTrace();
         }
         cap.setJavascriptEnabled(true);
-        
+
         return new RemoteWebDriver(appiumServerHost, cap);
     }
 

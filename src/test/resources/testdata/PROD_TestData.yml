@@ -1,18 +1,18 @@
 ProjectName: ASP Automated Regression Test Demo
-baseUrl: http://search.alexanderstreet.com/
+baseUrl: https://psyctherapyalpha.apa.org/
 
-username: utkarshakhouri@qainfotech.net
+username: prashantshukla@qainfotech.com
 password: Qait@123
 
-homePage: 
+homePage:
   searchTerm: Computers
-  
+
 publisherPage:
   breadcrumbTitle: Browse Publishers
   defaultNumberOfItemsPerPage: 25
   changedNumberOfItemsPerPage: 50
-  
+
 email:
-    recepients: 
+    recepients:
         recepient1: prateekshachauhan@qainfotech.com
         recepient2: prashantshukla@qainfotech.com
