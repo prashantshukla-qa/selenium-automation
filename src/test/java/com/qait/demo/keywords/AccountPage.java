@@ -24,17 +24,18 @@ public class AccountPage extends GetPage {
 
     public void open_login_form() {
         element("btn_login").click();
+        logMessage("[INFO]: User clicked on Login button");
     }
 
     public void open_registration_form() {
         element("btn_register").click();
         isElementDisplayed("modal_registration");
-        logMessage("Clicking on the Register button opens up the Sign Up modal");
+        logMessage("[INFO]: Clicking on the Register button opens up the Sign Up modal");
     }
 
     public void verifyRegisrationButton() {
         isElementDisplayed("btn_register");
-        logMessage("User has logged out successfully");
+        logMessage("[INFO]: User has logged out successfully");
     }
 
     public void open_form(String formName) {

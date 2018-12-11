@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -44,7 +45,7 @@ public class WebDriverFactory {
             if (browser.equalsIgnoreCase("firefox")) {
                 return getFirefoxDriver();
             } else if (browser.equalsIgnoreCase("chrome")) {
-                return getChromeDriver(seleniumconfig.get("driverpath"));
+                return getChromeDriver();
             } else if (browser.equalsIgnoreCase("Safari")) {
                 return getSafariDriver();
             } else if ((browser.equalsIgnoreCase("ie"))
@@ -87,12 +88,9 @@ public class WebDriverFactory {
         return new RemoteWebDriver(selserverhost, cap);
     }
 
-    private static WebDriver getChromeDriver(String driverpath) {
-        System.setProperty("webdriver.chrome.driver", driverpath);
+    private static WebDriver getChromeDriver() {
         ChromeOptions options = new ChromeOptions();
-        DesiredCapabilities cap = DesiredCapabilities.chrome();
-        cap.setCapability(ChromeOptions.CAPABILITY, options);
-        return new ChromeDriver(cap);
+        return new ChromeDriver(options);
     }
 
     private static WebDriver getInternetExplorerDriver(String driverpath) {
@@ -115,9 +113,9 @@ public class WebDriverFactory {
     }
 
     private static WebDriver getFirefoxDriver() {
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("browser.cache.disk.enable", false);
-        return new FirefoxDriver(profile);
+        FirefoxOptions ffOptions = new FirefoxOptions();
+        ffOptions.setCapability("browser.cache.disk.enable", false);
+        return new FirefoxDriver(ffOptions);
     }
 
     private WebDriver setMobileDriver(Map<String, String> selConfig) {

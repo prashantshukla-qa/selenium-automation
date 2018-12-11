@@ -11,7 +11,7 @@
 
     <properties>
         <testng.xml>TestNG.xml</testng.xml>
-        <seleniumver>2.48.2</seleniumver>
+        <seleniumver>3.141.59</seleniumver>
     </properties>
 
     <dependencies>

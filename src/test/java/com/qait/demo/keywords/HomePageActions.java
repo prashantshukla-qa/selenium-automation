@@ -38,7 +38,7 @@ public class HomePageActions extends GetPage {
     public void navigate_to_account_page() {
         wait.waitForPageToLoadCompletely();
         element("btn_Account").click();
-        logMessage("[INFO]: User clicked on Registration link");
+        logMessage("[INFO]: User clicked on Registration / Sign In link");
     }
 
     public void verifyUserName(String name) {
